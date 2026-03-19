@@ -13,8 +13,9 @@ services:
       - key: ALLOWED_ORIGINS
         value: https://bookfinder-web.onrender.com
 
-  - type: static
+  - type: web
     name: bookfinder-web
+    runtime: static
     rootDir: book-app-frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
