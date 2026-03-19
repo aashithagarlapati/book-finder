@@ -265,41 +265,41 @@
           "genres": []
         },
         {
-          "id": "/works/OL17054790W",
-          "title": "Percy Jackson's Greek Gods",
-          "author": "Rick Riordan",
-          "year": 2006,
-          "cover": "https://covers.openlibrary.org/b/id/7396660-M.jpg",
+          "id": "/works/OL82563W",
+          "title": "Harry Potter and the Philosopher's Stone",
+          "author": "J. K. Rowling",
+          "year": 1997,
+          "cover": "https://covers.openlibrary.org/b/id/15155833-M.jpg",
           "isbn": null,
           "description": null,
           "genres": []
         },
         {
-          "id": "/works/OL15598036W",
-          "title": "Sidney Sheldon's After the Darkness",
-          "author": "Sidney Sheldon",
-          "year": 2010,
-          "cover": "https://covers.openlibrary.org/b/id/6675324-M.jpg",
+          "id": "/works/OL82536W",
+          "title": "Harry Potter and the Prisoner of Azkaban",
+          "author": "J. K. Rowling",
+          "year": 1999,
+          "cover": "https://covers.openlibrary.org/b/id/10580435-M.jpg",
           "isbn": null,
           "description": null,
           "genres": []
         },
         {
-          "id": "/works/OL40367645W",
-          "title": "INFERNO by Dan Brown Summary",
-          "author": "Dan Brown",
-          "year": 2015,
-          "cover": null,
+          "id": "/works/OL82565W",
+          "title": "Harry Potter and the Half-Blood Prince",
+          "author": "J. K. Rowling",
+          "year": 2005,
+          "cover": "https://covers.openlibrary.org/b/id/10716273-M.jpg",
           "isbn": null,
           "description": null,
           "genres": []
         },
         {
-          "id": "/works/OL46881W",
-          "title": "Jurassic Park",
-          "author": "Michael Crichton",
-          "year": 1990,
-          "cover": "https://covers.openlibrary.org/b/id/12882940-M.jpg",
+          "id": "/works/OL82537W",
+          "title": "Harry Potter and the Chamber of Secrets",
+          "author": "J. K. Rowling",
+          "year": 1998,
+          "cover": "https://covers.openlibrary.org/b/id/15158664-M.jpg",
           "isbn": null,
           "description": null,
           "genres": []
@@ -307,167 +307,808 @@
       ],
       "recommendations": [
         {
-          "id": "/works/OL42541309W",
-          "title": "Hermione Granger",
+          "id": "/works/OL27482W",
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "year": 1937,
+          "cover": "https://covers.openlibrary.org/b/id/14627509-M.jpg",
+          "relevanceScore": 4,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL5759980W",
+          "title": "The Pigeon finds a hot dog!",
+          "author": "Mo Willems",
+          "year": 2004,
+          "cover": "https://covers.openlibrary.org/b/id/3334789-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL5682519W",
+          "title": "Dog Days",
+          "author": "Jeff Kinney",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/12366143-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL86707W",
+          "title": "Stellaluna",
+          "author": "Janell Cannon",
+          "year": 1990,
+          "cover": "https://covers.openlibrary.org/b/id/11026591-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL17603394W",
+          "title": "Double Down",
+          "author": "Jeff Kinney",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/7888937-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL27455W",
+          "title": "The Return of the King",
+          "author": "J.R.R. Tolkien",
+          "year": 1950,
+          "cover": "https://covers.openlibrary.org/b/id/14627062-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL8479867W",
+          "title": "The Name of the Wind",
+          "author": "Patrick Rothfuss",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/11480483-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL10263W",
+          "title": "Le petit prince",
+          "author": "Antoine de Saint-Exupéry",
+          "year": 1943,
+          "cover": "https://covers.openlibrary.org/b/id/10708272-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL16810944W",
+          "title": "The School for Good and Evil",
+          "author": "Soman Chainani",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/7879561-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL82560W",
+          "title": "Harry Potter and the Goblet of Fire",
           "author": "J. K. Rowling",
-          "year": 2025,
-          "cover": null,
-          "relevanceScore": 1
+          "year": 2000,
+          "cover": "https://covers.openlibrary.org/b/id/12059372-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
         },
         {
-          "id": "/works/OL42541314W",
-          "title": "Ron Weasley",
+          "id": "/works/OL82548W",
+          "title": "Harry Potter and the Order of the Phoenix",
           "author": "J. K. Rowling",
-          "year": 2025,
-          "cover": null,
-          "relevanceScore": 1
+          "year": 2003,
+          "cover": "https://covers.openlibrary.org/b/id/15158666-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
         },
         {
-          "id": "/works/OL42566123W",
-          "title": "Pocket Potters",
+          "id": "/works/OL2056818W",
+          "title": "Maus I",
+          "author": "Art Spiegelman",
+          "year": 1986,
+          "cover": "https://covers.openlibrary.org/b/id/10210168-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL17812914W",
+          "title": "Diary of a Wimpy Kid",
+          "author": "Jeff Kinney",
+          "year": 2017,
+          "cover": "https://covers.openlibrary.org/b/id/10332154-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL16361049W",
+          "title": "Keeper of the Lost Cities",
+          "author": "Shannon Messenger",
+          "year": 2012,
+          "cover": "https://covers.openlibrary.org/b/id/9320507-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL17798838W",
+          "title": "Dog Man",
+          "author": "Dav Pilkey",
+          "year": 1999,
+          "cover": "https://covers.openlibrary.org/b/id/14415649-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL16224122W",
+          "title": "Cabin Fever",
+          "author": "Jeff Kinney",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/7247522-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL17091839W",
+          "title": "The Martian",
+          "author": "Andy Weir",
+          "year": 2011,
+          "cover": "https://covers.openlibrary.org/b/id/11447888-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL15401200W",
+          "title": "The Lost Hero",
+          "author": "Rick Riordan",
+          "year": 2010,
+          "cover": "https://covers.openlibrary.org/b/id/12848687-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL492647W",
+          "title": "The Titan's Curse",
+          "author": "Rick Riordan",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/14601475-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL14981609W",
+          "title": "Harry Potter (series) 1-7",
           "author": "J. K. Rowling",
-          "year": 2025,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL42551427W",
-          "title": "Estuche Harry Potter Gryffindor (edición Limitada) / Harry Potter Gryffindor House. Boxed Set (Limited Edition)",
-          "author": "J. K. Rowling",
-          "year": 2025,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL42551864W",
-          "title": "Harry Potter y el Prisionero de Azkaban / Harry Potter and the Prisoner of Azkab An",
-          "author": "J. K. Rowling",
-          "year": 2025,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL42427443W",
-          "title": "Ickabog",
-          "author": "J. K. Rowling",
-          "year": 2025,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44411222W",
-          "title": "Hermiona Granger",
-          "author": "J. K. Rowling",
-          "year": 2025,
-          "cover": "https://covers.openlibrary.org/b/id/15144630-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44411224W",
-          "title": "Ron Weasley p",
-          "author": "J. K. Rowling",
-          "year": 2025,
-          "cover": "https://covers.openlibrary.org/b/id/15144632-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44517892W",
-          "title": "Harry Potter et les reliques de la mort - Volume 2",
-          "author": "J.K. Rowling",
-          "year": 2025,
-          "cover": "https://covers.openlibrary.org/b/id/15151010-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44517884W",
-          "title": "Harry Potter et l'ordre du phénix - Volume 1",
-          "author": "J.K. Rowling",
-          "year": 2025,
-          "cover": "https://covers.openlibrary.org/b/id/15151003-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44517887W",
-          "title": "Harry Potter et l'ordre du phénix - Volume 2",
-          "author": "J.K. Rowling",
-          "year": 2025,
-          "cover": "https://covers.openlibrary.org/b/id/15151004-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44517888W",
-          "title": "Harry Potter et le prince de sang-mêlé - Volume 1",
-          "author": "J.K. Rowling",
-          "year": 2025,
-          "cover": "https://covers.openlibrary.org/b/id/15151005-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44517872W",
-          "title": "Harry Potter et la coupe du feu - Volume 2",
-          "author": "J.K. Rowling",
-          "year": 2025,
-          "cover": "https://covers.openlibrary.org/b/id/15151002-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44517883W",
-          "title": "Harry Potter et l'ordre du phénix - Volume 1",
-          "author": "J.K. Rowling",
-          "year": 2025,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44517889W",
-          "title": "Harry Potter et le prince de sang-mêlé - Volume 2",
-          "author": "J.K. Rowling",
-          "year": 2025,
-          "cover": "https://covers.openlibrary.org/b/id/15151007-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44517857W",
-          "title": "Harry Potter et la coupe du feu - Volume 1",
-          "author": "J.K. Rowling",
-          "year": 2025,
-          "cover": "https://covers.openlibrary.org/b/id/15150999-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44585930W",
-          "title": "Ickabog (Edición Ilustrada) / the Ickabog (Ilustrated Edition)",
-          "author": "J. K. Rowling",
-          "year": 2025,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL44411220W",
-          "title": "Harry Potter p",
-          "author": "J. K. Rowling",
-          "year": 2025,
-          "cover": "https://covers.openlibrary.org/b/id/15144628-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL42544449W",
-          "title": "Harry Potter",
-          "author": "J. K. Rowling",
-          "year": 2025,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL37618594W",
-          "title": "Harry Potter y el Prisionero de Azkaban (Ed. Minalima)",
-          "author": "J. K. Rowling",
-          "year": 2024,
-          "cover": "https://covers.openlibrary.org/b/id/14631819-M.jpg",
-          "relevanceScore": 1
+          "year": 1999,
+          "cover": "https://covers.openlibrary.org/b/id/8457523-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
         }
       ],
-      "createdAt": "2026-03-19T10:05:33.960Z"
+      "createdAt": "2026-03-19T12:51:02.084Z"
+    },
+    "user-a@b.com": {
+      "inputBooks": [
+        {
+          "id": "/works/OL82586W",
+          "title": "Harry Potter and the Deathly Hallows",
+          "author": "J. K. Rowling",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/15158660-M.jpg",
+          "isbn": null,
+          "description": null,
+          "genres": []
+        },
+        {
+          "id": "/works/OL82563W",
+          "title": "Harry Potter and the Philosopher's Stone",
+          "author": "J. K. Rowling",
+          "year": 1997,
+          "cover": "https://covers.openlibrary.org/b/id/15155833-M.jpg",
+          "isbn": null,
+          "description": null,
+          "genres": []
+        },
+        {
+          "id": "/works/OL82536W",
+          "title": "Harry Potter and the Prisoner of Azkaban",
+          "author": "J. K. Rowling",
+          "year": 1999,
+          "cover": "https://covers.openlibrary.org/b/id/10580435-M.jpg",
+          "isbn": null,
+          "description": null,
+          "genres": []
+        },
+        {
+          "id": "/works/OL82565W",
+          "title": "Harry Potter and the Half-Blood Prince",
+          "author": "J. K. Rowling",
+          "year": 2005,
+          "cover": "https://covers.openlibrary.org/b/id/10716273-M.jpg",
+          "isbn": null,
+          "description": null,
+          "genres": []
+        },
+        {
+          "id": "/works/OL82537W",
+          "title": "Harry Potter and the Chamber of Secrets",
+          "author": "J. K. Rowling",
+          "year": 1998,
+          "cover": "https://covers.openlibrary.org/b/id/15158664-M.jpg",
+          "isbn": null,
+          "description": null,
+          "genres": []
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "/works/OL27482W",
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "year": 1937,
+          "cover": "https://covers.openlibrary.org/b/id/14627509-M.jpg",
+          "relevanceScore": 4,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL5759980W",
+          "title": "The Pigeon finds a hot dog!",
+          "author": "Mo Willems",
+          "year": 2004,
+          "cover": "https://covers.openlibrary.org/b/id/3334789-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL5682519W",
+          "title": "Dog Days",
+          "author": "Jeff Kinney",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/12366143-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL86707W",
+          "title": "Stellaluna",
+          "author": "Janell Cannon",
+          "year": 1990,
+          "cover": "https://covers.openlibrary.org/b/id/11026591-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL17603394W",
+          "title": "Double Down",
+          "author": "Jeff Kinney",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/7888937-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL27455W",
+          "title": "The Return of the King",
+          "author": "J.R.R. Tolkien",
+          "year": 1950,
+          "cover": "https://covers.openlibrary.org/b/id/14627062-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL8479867W",
+          "title": "The Name of the Wind",
+          "author": "Patrick Rothfuss",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/11480483-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL10263W",
+          "title": "Le petit prince",
+          "author": "Antoine de Saint-Exupéry",
+          "year": 1943,
+          "cover": "https://covers.openlibrary.org/b/id/10708272-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL16810944W",
+          "title": "The School for Good and Evil",
+          "author": "Soman Chainani",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/7879561-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL82560W",
+          "title": "Harry Potter and the Goblet of Fire",
+          "author": "J. K. Rowling",
+          "year": 2000,
+          "cover": "https://covers.openlibrary.org/b/id/12059372-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL82548W",
+          "title": "Harry Potter and the Order of the Phoenix",
+          "author": "J. K. Rowling",
+          "year": 2003,
+          "cover": "https://covers.openlibrary.org/b/id/15158666-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL2056818W",
+          "title": "Maus I",
+          "author": "Art Spiegelman",
+          "year": 1986,
+          "cover": "https://covers.openlibrary.org/b/id/10210168-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL17812914W",
+          "title": "Diary of a Wimpy Kid",
+          "author": "Jeff Kinney",
+          "year": 2017,
+          "cover": "https://covers.openlibrary.org/b/id/10332154-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL16361049W",
+          "title": "Keeper of the Lost Cities",
+          "author": "Shannon Messenger",
+          "year": 2012,
+          "cover": "https://covers.openlibrary.org/b/id/9320507-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL17798838W",
+          "title": "Dog Man",
+          "author": "Dav Pilkey",
+          "year": 1999,
+          "cover": "https://covers.openlibrary.org/b/id/14415649-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL16224122W",
+          "title": "Cabin Fever",
+          "author": "Jeff Kinney",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/7247522-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL17091839W",
+          "title": "The Martian",
+          "author": "Andy Weir",
+          "year": 2011,
+          "cover": "https://covers.openlibrary.org/b/id/11447888-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL15401200W",
+          "title": "The Lost Hero",
+          "author": "Rick Riordan",
+          "year": 2010,
+          "cover": "https://covers.openlibrary.org/b/id/12848687-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL492647W",
+          "title": "The Titan's Curse",
+          "author": "Rick Riordan",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/14601475-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        },
+        {
+          "id": "/works/OL14981609W",
+          "title": "Harry Potter (series) 1-7",
+          "author": "J. K. Rowling",
+          "year": 1999,
+          "cover": "https://covers.openlibrary.org/b/id/8457523-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "children's books",
+            "dementors",
+            "good and evil",
+            "Juvenile literature",
+            "Juvenile works",
+            "Death",
+            "Fiction",
+            "series:Harry_Potter",
+            "Ghosts"
+          ]
+        }
+      ],
+      "createdAt": "2026-03-19T12:51:47.786Z"
     }
   },
   "counters": {

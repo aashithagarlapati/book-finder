@@ -32,7 +32,8 @@ function AuthPage({ onLogin }) {
   const firebaseAvailable = auth.isFirebaseConfigured();
   const demoAvailable = auth.isDemoEnabled();
   const [isSignup, setIsSignup] = useState(false);
-  const [authMode, setAuthMode] = useState(accountAvailable ? 'account' : 'demo');
+  const defaultMode = auth.getDefaultAuthMode() || (accountAvailable ? 'account' : 'demo');
+  const [authMode, setAuthMode] = useState(defaultMode);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');

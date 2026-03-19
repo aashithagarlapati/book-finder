@@ -24,6 +24,10 @@ services:
     envVars:
       - key: VITE_API_URL
         value: https://bookfinder-api-rwv7.onrender.com/api
+      - key: VITE_ENABLE_DEMO_AUTH
+        value: 'true'
+      - key: VITE_DEFAULT_AUTH_MODE
+        value: demo
     routes:
       - type: rewrite
         source: /*

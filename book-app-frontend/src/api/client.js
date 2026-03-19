@@ -8,6 +8,7 @@ import {
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 const DEMO_AUTH_ENABLED = import.meta.env.VITE_ENABLE_DEMO_AUTH !== 'false';
+const DEFAULT_AUTH_MODE = import.meta.env.VITE_DEFAULT_AUTH_MODE || null;
 
 const client = axios.create({
   baseURL: API_BASE_URL,
@@ -43,6 +44,7 @@ export const auth = {
   isFirebaseConfigured: () => isFirebaseClientConfigured(),
   isDemoEnabled: () => DEMO_AUTH_ENABLED,
   isAccountModeAvailable: () => true,
+  getDefaultAuthMode: () => DEFAULT_AUTH_MODE,
   signup: async (email, password, displayName, options = {}) => {
     const mode = options.mode || 'account';
 
