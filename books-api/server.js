@@ -23,8 +23,21 @@ const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173,ht
   .split(',')
   .map((origin) => origin.trim())
   .filter(Boolean);
+
+const allowedRenderPreview = /^https:\/\/bookfinder-web(?:-[a-z0-9]+)?\.onrender\.com$/;
+
 app.use(cors({
-  origin: allowedOrigins,
+  origin: (origin, callback) => {
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    if (allowedOrigins.includes(origin) || allowedRenderPreview.test(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error(`Origin not allowed by CORS: ${origin}`));
+  },
   credentials: true,
 }));
 

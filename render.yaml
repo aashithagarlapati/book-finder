@@ -11,7 +11,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: ALLOWED_ORIGINS
-        value: https://bookfinder-web.onrender.com
+        value: https://bookfinder-web-j3hq.onrender.com
 
   - type: web
     name: bookfinder-web
@@ -21,7 +21,7 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://bookfinder-api.onrender.com/api
+        value: https://bookfinder-api-rwv7.onrender.com/api
     routes:
       - type: rewrite
         source: /*
