@@ -1,0 +1,476 @@
+{
+  "users": [
+    {
+      "uid": "user-1773914167861",
+      "email": "praveen.test@bookfinder.local",
+      "displayName": "Praveen",
+      "passwordHash": "65431eeb3079333208676d4e18474b80:4b1bc9ca284d17e950da863cd0e4c9bf4c214b43a7f6aed7a2308340b44c97593c281c7934e843220695dcb4e5f5a71db0d67d6a23d583074d02cc3e9226238e",
+      "createdAt": "2026-03-19T09:56:07.884Z",
+      "updatedAt": "2026-03-19T09:56:07.884Z"
+    },
+    {
+      "uid": "user-1773914220290",
+      "email": "dexterslab@outlook.com",
+      "displayName": "Praveen",
+      "passwordHash": "90a2616c87265c31bcaa6fa4db790ee6:7db4eb11dbe7e4f51d68b1eac2d1ae2f000b2bcef353198e60bee6f914e2b554586f571741a8340ebf8fcc6df735042379412b44fe84074862d8d3ed2dddb519",
+      "createdAt": "2026-03-19T09:57:00.330Z",
+      "updatedAt": "2026-03-19T09:57:00.330Z"
+    },
+    {
+      "uid": "user-1773914643651",
+      "email": "recotest2@bookfinder.local",
+      "displayName": "recotest2",
+      "passwordHash": "8fd185ea109ccc3ef082728fd3a3f075:3bf5a2d281f97ec0f12008c9886647a400294a0596b48a2a528b25a08fd59a0eb7b1981741120cb55c1ca67974f362bd67d58c31759274c3ae53699bea178bcc",
+      "createdAt": "2026-03-19T10:04:03.674Z",
+      "updatedAt": "2026-03-19T10:04:03.674Z"
+    }
+  ],
+  "readingLists": {
+    "user-1773914167861": [
+      {
+        "id": "/works/OL893415W",
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "addedAt": "2026-03-19T09:56:07.938Z",
+        "status": "want-to-read"
+      }
+    ],
+    "user-1773914220290": [
+      {
+        "id": "/works/OL42541309W",
+        "title": "Hermione Granger",
+        "author": "J. K. Rowling",
+        "year": 2025,
+        "cover": null,
+        "relevanceScore": 1,
+        "addedAt": "2026-03-19T10:06:10.437Z",
+        "status": "want-to-read"
+      },
+      {
+        "id": "/works/OL42541314W",
+        "title": "Ron Weasley",
+        "author": "J. K. Rowling",
+        "year": 2025,
+        "cover": null,
+        "relevanceScore": 1,
+        "addedAt": "2026-03-19T10:06:11.501Z",
+        "status": "want-to-read"
+      }
+    ]
+  },
+  "publicLists": {},
+  "recommendations": {
+    "user-1773914643651": {
+      "inputBooks": [
+        {
+          "id": "/works/FAKE001",
+          "title": "Invisible Cities",
+          "author": "Italo Calvino"
+        },
+        {
+          "id": "/works/FAKE002",
+          "title": "If on a winter night a traveler",
+          "author": "Italo Calvino"
+        },
+        {
+          "id": "/works/FAKE003",
+          "title": "The Name of the Rose",
+          "author": "Umberto Eco"
+        },
+        {
+          "id": "/works/FAKE004",
+          "title": "Foucaults Pendulum",
+          "author": "Umberto Eco"
+        },
+        {
+          "id": "/works/FAKE005",
+          "title": "The Garden of Forking Paths",
+          "author": "Jorge Luis Borges"
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "/works/OL34026241W",
+          "title": "If on a Winter's Night a Traveller",
+          "author": "Italo Calvino",
+          "year": 2023,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL34031084W",
+          "title": "Last Comes the Raven",
+          "author": "Italo Calvino",
+          "year": 2023,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL28798542W",
+          "title": "Last Comes the Raven",
+          "author": "Italo Calvino",
+          "year": 2023,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL28347251W",
+          "title": "Written World and the Unwritten World",
+          "author": "Italo Calvino",
+          "year": 2023,
+          "cover": "https://covers.openlibrary.org/b/id/14775914-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL25202770W",
+          "title": "Written World and the Unwritten World",
+          "author": "Italo Calvino",
+          "year": 2022,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL27821194W",
+          "title": "Cosmicomics",
+          "author": "Italo Calvino",
+          "year": 2022,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL28801127W",
+          "title": "Cosmicomics",
+          "author": "Italo Calvino",
+          "year": 2022,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL21279580W",
+          "title": "The written world and the unwritten world",
+          "author": "Italo Calvino",
+          "year": 2022,
+          "cover": "https://covers.openlibrary.org/b/id/13846724-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL26385390W",
+          "title": "Los amores difíciles",
+          "author": "Italo Calvino",
+          "year": 2021,
+          "cover": "https://covers.openlibrary.org/b/id/12332380-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL26271819W",
+          "title": "Buyulu Kus",
+          "author": "Italo Calvino",
+          "year": 2021,
+          "cover": "https://covers.openlibrary.org/b/id/12273970-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL26271846W",
+          "title": "Yengec Prens",
+          "author": "Italo Calvino",
+          "year": 2021,
+          "cover": "https://covers.openlibrary.org/b/id/12273997-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL26353112W",
+          "title": "Azicik Acikli Masallar",
+          "author": "Italo Calvino",
+          "year": 2021,
+          "cover": "https://covers.openlibrary.org/b/id/12297812-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL21292750W",
+          "title": "Last Comes the Raven",
+          "author": "Italo Calvino",
+          "year": 2021,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL25813765W",
+          "title": "Mindful of Venice",
+          "author": "David Whittaker",
+          "year": 2020,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL28345194W",
+          "title": "Narrative of Trajan's Column",
+          "author": "Italo Calvino",
+          "year": 2020,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL26272261W",
+          "title": "Efsunlu Kiz Masallari",
+          "author": "Italo Calvino",
+          "year": 2020,
+          "cover": "https://covers.openlibrary.org/b/id/12274427-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL21689326W",
+          "title": "Narrative of Trajan's Column",
+          "author": "Italo Calvino",
+          "year": 2020,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL24245224W",
+          "title": "Tomás Saraceno",
+          "author": "Italo Calvino",
+          "year": 2020,
+          "cover": "https://covers.openlibrary.org/b/id/10725175-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL24424591W",
+          "title": "La nuvola di smog-La formica argentina",
+          "author": "Italo Calvino",
+          "year": 2019,
+          "cover": "https://covers.openlibrary.org/b/id/10982790-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL24424592W",
+          "title": "La nuvola di smog-La formica argentina",
+          "author": "Italo Calvino",
+          "year": 2019,
+          "cover": "https://covers.openlibrary.org/b/id/10982791-M.jpg",
+          "relevanceScore": 1
+        }
+      ],
+      "createdAt": "2026-03-19T10:04:46.053Z"
+    },
+    "user-1773914220290": {
+      "inputBooks": [
+        {
+          "id": "/works/OL82586W",
+          "title": "Harry Potter and the Deathly Hallows",
+          "author": "J. K. Rowling",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/15158660-M.jpg",
+          "isbn": null,
+          "description": null,
+          "genres": []
+        },
+        {
+          "id": "/works/OL17054790W",
+          "title": "Percy Jackson's Greek Gods",
+          "author": "Rick Riordan",
+          "year": 2006,
+          "cover": "https://covers.openlibrary.org/b/id/7396660-M.jpg",
+          "isbn": null,
+          "description": null,
+          "genres": []
+        },
+        {
+          "id": "/works/OL15598036W",
+          "title": "Sidney Sheldon's After the Darkness",
+          "author": "Sidney Sheldon",
+          "year": 2010,
+          "cover": "https://covers.openlibrary.org/b/id/6675324-M.jpg",
+          "isbn": null,
+          "description": null,
+          "genres": []
+        },
+        {
+          "id": "/works/OL40367645W",
+          "title": "INFERNO by Dan Brown Summary",
+          "author": "Dan Brown",
+          "year": 2015,
+          "cover": null,
+          "isbn": null,
+          "description": null,
+          "genres": []
+        },
+        {
+          "id": "/works/OL46881W",
+          "title": "Jurassic Park",
+          "author": "Michael Crichton",
+          "year": 1990,
+          "cover": "https://covers.openlibrary.org/b/id/12882940-M.jpg",
+          "isbn": null,
+          "description": null,
+          "genres": []
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "/works/OL42541309W",
+          "title": "Hermione Granger",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL42541314W",
+          "title": "Ron Weasley",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL42566123W",
+          "title": "Pocket Potters",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL42551427W",
+          "title": "Estuche Harry Potter Gryffindor (edición Limitada) / Harry Potter Gryffindor House. Boxed Set (Limited Edition)",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL42551864W",
+          "title": "Harry Potter y el Prisionero de Azkaban / Harry Potter and the Prisoner of Azkab An",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL42427443W",
+          "title": "Ickabog",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44411222W",
+          "title": "Hermiona Granger",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": "https://covers.openlibrary.org/b/id/15144630-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44411224W",
+          "title": "Ron Weasley p",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": "https://covers.openlibrary.org/b/id/15144632-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44517892W",
+          "title": "Harry Potter et les reliques de la mort - Volume 2",
+          "author": "J.K. Rowling",
+          "year": 2025,
+          "cover": "https://covers.openlibrary.org/b/id/15151010-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44517884W",
+          "title": "Harry Potter et l'ordre du phénix - Volume 1",
+          "author": "J.K. Rowling",
+          "year": 2025,
+          "cover": "https://covers.openlibrary.org/b/id/15151003-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44517887W",
+          "title": "Harry Potter et l'ordre du phénix - Volume 2",
+          "author": "J.K. Rowling",
+          "year": 2025,
+          "cover": "https://covers.openlibrary.org/b/id/15151004-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44517888W",
+          "title": "Harry Potter et le prince de sang-mêlé - Volume 1",
+          "author": "J.K. Rowling",
+          "year": 2025,
+          "cover": "https://covers.openlibrary.org/b/id/15151005-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44517872W",
+          "title": "Harry Potter et la coupe du feu - Volume 2",
+          "author": "J.K. Rowling",
+          "year": 2025,
+          "cover": "https://covers.openlibrary.org/b/id/15151002-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44517883W",
+          "title": "Harry Potter et l'ordre du phénix - Volume 1",
+          "author": "J.K. Rowling",
+          "year": 2025,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44517889W",
+          "title": "Harry Potter et le prince de sang-mêlé - Volume 2",
+          "author": "J.K. Rowling",
+          "year": 2025,
+          "cover": "https://covers.openlibrary.org/b/id/15151007-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44517857W",
+          "title": "Harry Potter et la coupe du feu - Volume 1",
+          "author": "J.K. Rowling",
+          "year": 2025,
+          "cover": "https://covers.openlibrary.org/b/id/15150999-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44585930W",
+          "title": "Ickabog (Edición Ilustrada) / the Ickabog (Ilustrated Edition)",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL44411220W",
+          "title": "Harry Potter p",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": "https://covers.openlibrary.org/b/id/15144628-M.jpg",
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL42544449W",
+          "title": "Harry Potter",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": null,
+          "relevanceScore": 1
+        },
+        {
+          "id": "/works/OL37618594W",
+          "title": "Harry Potter y el Prisionero de Azkaban (Ed. Minalima)",
+          "author": "J. K. Rowling",
+          "year": 2024,
+          "cover": "https://covers.openlibrary.org/b/id/14631819-M.jpg",
+          "relevanceScore": 1
+        }
+      ],
+      "createdAt": "2026-03-19T10:05:33.960Z"
+    }
+  },
+  "counters": {
+    "publicList": 1
+  }
+}

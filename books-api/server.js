@@ -25,6 +25,7 @@ const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173,ht
   .filter(Boolean);
 
 const allowedRenderPreview = /^https:\/\/bookfinder-web(?:-[a-z0-9]+)?\.onrender\.com$/;
+const allowedLocalDevOrigin = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/;
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -32,7 +33,7 @@ app.use(cors({
       return callback(null, true);
     }
 
-    if (allowedOrigins.includes(origin) || allowedRenderPreview.test(origin)) {
+    if (allowedOrigins.includes(origin) || allowedRenderPreview.test(origin) || allowedLocalDevOrigin.test(origin)) {
       return callback(null, true);
     }
 
@@ -50,6 +51,22 @@ app.use('/api/books', booksRoutes);
 app.use('/api/recommendations', authenticate, recommendationsRoutes);
 app.use('/api/lists', authenticate, listsRoutes);
 app.use('/api/public-lists', publicListsRoutes);
+
+// Root info
+app.get('/', (req, res) => {
+  res.json({
+    name: 'BookFinder API',
+    status: 'OK',
+    health: '/health',
+    routes: {
+      auth: '/api/auth',
+      books: '/api/books',
+      recommendations: '/api/recommendations',
+      lists: '/api/lists',
+      publicLists: '/api/public-lists',
+    },
+  });
+});
 
 // Health check
 app.get('/health', (req, res) => {

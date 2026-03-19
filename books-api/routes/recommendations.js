@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const { readStore, updateStore } = require('../lib/store');
 
 const router = express.Router();
 
@@ -25,9 +26,6 @@ const getCoverUrlFromDoc = (doc) => {
   return null;
 };
 
-// In-memory storage for recommendations (replace with Firestore in real implementation)
-const recommendationsStore = {};
-
 // Extract genres from a book based on OpenLibrary subjects
 const getBookGenres = async (bookId) => {
   try {
@@ -41,8 +39,35 @@ const getBookGenres = async (bookId) => {
   }
 };
 
+// Search OpenLibrary and push unique results into the recommendations array
+const collectFromSearch = async (params, inputBookIds, recommendations) => {
+  try {
+    const response = await axios.get(OPENLIBRARY_API, { params, timeout: 5000 });
+    if (!response.data.docs) return;
+    response.data.docs.forEach((doc) => {
+      if (!doc.key || !doc.title) return;
+      if (inputBookIds.has(doc.key)) return;
+      const existing = recommendations.find((r) => r.id === doc.key);
+      if (existing) {
+        existing.relevanceScore = (existing.relevanceScore || 1) + 1;
+      } else {
+        recommendations.push({
+          id: doc.key,
+          title: doc.title,
+          author: (doc.author_name && doc.author_name[0]) || 'Unknown Author',
+          year: doc.first_publish_year,
+          cover: getCoverUrlFromDoc(doc),
+          relevanceScore: 1,
+        });
+      }
+    });
+  } catch (err) {
+    // silently skip failed sub-searches
+  }
+};
+
 // Get recommendations based on input books
-// Algorithm: Extract all genres from input books, search for books matching those genres
+// Algorithm: genre-based → author-based → keyword fallback (never hard-fails)
 router.post('/', async (req, res) => {
   const { books } = req.body;
   const userId = req.user.uid;
@@ -57,11 +82,17 @@ router.post('/', async (req, res) => {
     // Collect all genres from input books
     const allGenres = new Set();
     const inputBookIds = new Set();
+    const inputAuthors = new Set();
+    const inputTitleWords = new Set();
 
     // Get genres from each input book
     for (const book of books) {
-      if (book.id) {
-        inputBookIds.add(book.id);
+      if (book.id) inputBookIds.add(book.id);
+      if (book.author) inputAuthors.add(book.author);
+
+      // Collect significant title words for keyword fallback
+      if (book.title) {
+        book.title.split(/\s+/).filter((w) => w.length > 4).forEach((w) => inputTitleWords.add(w));
       }
 
       if (Array.isArray(book.genres) && book.genres.length > 0) {
@@ -77,78 +108,69 @@ router.post('/', async (req, res) => {
         }
 
         const response = await axios.get(OPENLIBRARY_API, {
-          params: {
-            title: book.title,
-            author: book.author,
-            limit: 1,
-          },
-          timeout: 3000,
+          params: { title: book.title, author: book.author, limit: 1 },
+          timeout: 5000,
         });
 
         if (response.data.docs && response.data.docs.length > 0) {
           const doc = response.data.docs[0];
-          if (doc.key) {
-            inputBookIds.add(doc.key);
-          }
-
-          if (doc.subject) {
-            doc.subject.slice(0, 8).forEach((genre) => allGenres.add(genre));
-          }
+          if (doc.key) inputBookIds.add(doc.key);
+          // try subject, subject_facet, subject_key — whatever OpenLibrary returns
+          const subs = doc.subject || doc.subject_facet || doc.subject_key || [];
+          subs.slice(0, 8).forEach((genre) => allGenres.add(genre));
         }
       } catch (error) {
         console.error(`Failed to fetch genres for book: ${book.title}`, error.message);
       }
     }
 
-    if (allGenres.size === 0) {
-      return res.status(400).json({
-        error: 'Could not find genres for the input books',
-      });
+    // ── TIER 1: genre-based search ───────────────────────────────────────────
+    const recommendations = [];
+
+    if (allGenres.size > 0) {
+      const genresArray = Array.from(allGenres).slice(0, 10);
+      for (const genre of genresArray) {
+        await collectFromSearch(
+          { subject: genre, limit: 30, sort: 'rating' },
+          inputBookIds,
+          recommendations,
+        );
+        recommendations.forEach((r) => {
+          if (!r.matchedGenres) r.matchedGenres = [];
+          if (!r.matchedGenres.includes(genre)) r.matchedGenres.push(genre);
+        });
+      }
     }
 
-    // Search for recommendations using collected genres
-    const recommendations = [];
-    const genresArray = Array.from(allGenres).slice(0, 10); // Limit to 10 genres for search
-
-    for (const genre of genresArray) {
-      try {
-        const response = await axios.get(OPENLIBRARY_API, {
-          params: {
-            subject: genre,
-            limit: 30,
-            sort: 'rating',
-          },
-          timeout: 3000,
-        });
-
-        if (response.data.docs) {
-          response.data.docs.forEach((doc) => {
-            // Skip input books
-            if (inputBookIds.has(doc.key)) return;
-
-            // Check if already in recommendations
-            const existing = recommendations.find((r) => r.id === doc.key);
-            if (existing) {
-              existing.matchedGenres = (existing.matchedGenres || []).concat(genre);
-              existing.relevanceScore = existing.matchedGenres.length;
-            } else {
-              const coverUrl = getCoverUrlFromDoc(doc);
-
-              recommendations.push({
-                id: doc.key,
-                title: doc.title,
-                author: (doc.author_name && doc.author_name[0]) || 'Unknown Author',
-                year: doc.first_publish_year,
-                cover: coverUrl,
-                matchedGenres: [genre],
-                relevanceScore: 1,
-              });
-            }
-          });
-        }
-      } catch (error) {
-        console.error(`Failed to search for genre: ${genre}`, error.message);
+    // ── TIER 2: author-based fallback ────────────────────────────────────────
+    if (recommendations.length < 10) {
+      for (const author of inputAuthors) {
+        await collectFromSearch(
+          { author, limit: 20, sort: 'new' },
+          inputBookIds,
+          recommendations,
+        );
       }
+    }
+
+    // ── TIER 3: title-keyword fallback ───────────────────────────────────────
+    if (recommendations.length < 10) {
+      for (const word of Array.from(inputTitleWords).slice(0, 5)) {
+        await collectFromSearch(
+          { q: word, limit: 20, sort: 'rating' },
+          inputBookIds,
+          recommendations,
+        );
+      }
+    }
+
+    // ── TIER 4: popular books last resort ────────────────────────────────────
+    if (recommendations.length < 5) {
+      await collectFromSearch(
+        { q: 'fiction', limit: 30, sort: 'rating' },
+        inputBookIds,
+        recommendations,
+      );
     }
 
     // Sort by relevance score and take top 20
@@ -156,14 +178,15 @@ router.post('/', async (req, res) => {
       .sort((a, b) => b.relevanceScore - a.relevanceScore)
       .slice(0, 20);
 
-    // Store recommendations for user (in Firestore in real implementation)
-    recommendationsStore[userId] = {
-      inputBooks: books,
-      recommendations: topRecommendations,
-      createdAt: new Date(),
-    };
+    updateStore((store) => {
+      store.recommendations[userId] = {
+        inputBooks: books,
+        recommendations: topRecommendations,
+        createdAt: new Date().toISOString(),
+      };
+    });
 
-    res.json({
+    return res.json({
       message: 'Recommendations generated successfully',
       recommendations: topRecommendations,
       count: topRecommendations.length,
@@ -182,8 +205,10 @@ router.get('/', async (req, res) => {
   const userId = req.user.uid;
 
   try {
-    if (recommendationsStore[userId]) {
-      return res.json(recommendationsStore[userId]);
+    const store = readStore();
+
+    if (store.recommendations[userId]) {
+      return res.json(store.recommendations[userId]);
     }
 
     res.status(404).json({

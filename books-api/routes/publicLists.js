@@ -1,13 +1,11 @@
 const express = require('express');
+const authenticate = require('../middleware/authenticate');
+const { readStore, updateStore } = require('../lib/store');
 
 const router = express.Router();
 
-// In-memory storage for public lists (replace with Firestore in real implementation)
-const publicListsStore = {};
-let listIdCounter = 1;
-
 // Create a public list
-router.post('/create', async (req, res) => {
+router.post('/create', authenticate, async (req, res) => {
   const { listName, description, books, isPublic } = req.body;
   const userId = req.user.uid;
 
@@ -18,20 +16,23 @@ router.post('/create', async (req, res) => {
   }
 
   try {
-    const listId = `list-${listIdCounter++}`;
+    const newList = updateStore((store) => {
+      const listId = `list-${store.counters.publicList++}`;
+      const createdAt = new Date().toISOString();
+      const nextList = {
+        id: listId,
+        userId,
+        listName,
+        description: description || '',
+        books,
+        isPublic: isPublic === true,
+        createdAt,
+        updatedAt: createdAt,
+      };
 
-    const newList = {
-      id: listId,
-      userId,
-      listName,
-      description: description || '',
-      books,
-      isPublic: isPublic === true,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    };
-
-    publicListsStore[listId] = newList;
+      store.publicLists[listId] = nextList;
+      return nextList;
+    });
 
     res.status(201).json({
       message: 'List created successfully',
@@ -51,7 +52,8 @@ router.get('/', async (req, res) => {
   const { page = 1, limit = 10 } = req.query;
 
   try {
-    const publicLists = Object.values(publicListsStore)
+    const store = readStore();
+    const publicLists = Object.values(store.publicLists)
       .filter((list) => list.isPublic)
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
@@ -79,7 +81,8 @@ router.get('/:listId', async (req, res) => {
   const { listId } = req.params;
 
   try {
-    const list = publicListsStore[listId];
+    const store = readStore();
+    const list = store.publicLists[listId];
 
     if (!list || !list.isPublic) {
       return res.status(404).json({ error: 'List not found' });
@@ -100,7 +103,8 @@ router.get('/user/:userId', async (req, res) => {
   const currentUserId = req.user ? req.user.uid : null;
 
   try {
-    const userLists = Object.values(publicListsStore)
+    const store = readStore();
+    const userLists = Object.values(store.publicLists)
       .filter((list) => list.userId === userId)
       .filter((list) => list.isPublic || userId === currentUserId)
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
@@ -119,27 +123,38 @@ router.get('/user/:userId', async (req, res) => {
 });
 
 // Update a public list (only by creator)
-router.patch('/:listId', async (req, res) => {
+router.patch('/:listId', authenticate, async (req, res) => {
   const { listId } = req.params;
   const { listName, description, books, isPublic } = req.body;
   const userId = req.user.uid;
 
   try {
-    const list = publicListsStore[listId];
+    const list = updateStore((store) => {
+      const existingList = store.publicLists[listId];
 
-    if (!list) {
+      if (!existingList) {
+        return { error: 'not-found' };
+      }
+
+      if (existingList.userId !== userId) {
+        return { error: 'forbidden' };
+      }
+
+      if (listName) existingList.listName = listName;
+      if (description !== undefined) existingList.description = description;
+      if (books && books.length > 0) existingList.books = books;
+      if (isPublic !== undefined) existingList.isPublic = isPublic;
+      existingList.updatedAt = new Date().toISOString();
+      return existingList;
+    });
+
+    if (list?.error === 'not-found') {
       return res.status(404).json({ error: 'List not found' });
     }
 
-    if (list.userId !== userId) {
+    if (list?.error === 'forbidden') {
       return res.status(403).json({ error: 'You can only edit your own lists' });
     }
-
-    if (listName) list.listName = listName;
-    if (description !== undefined) list.description = description;
-    if (books && books.length > 0) list.books = books;
-    if (isPublic !== undefined) list.isPublic = isPublic;
-    list.updatedAt = new Date();
 
     res.json({
       message: 'List updated successfully',
@@ -154,22 +169,33 @@ router.patch('/:listId', async (req, res) => {
 });
 
 // Delete a public list (only by creator)
-router.delete('/:listId', async (req, res) => {
+router.delete('/:listId', authenticate, async (req, res) => {
   const { listId } = req.params;
   const userId = req.user.uid;
 
   try {
-    const list = publicListsStore[listId];
+    const list = updateStore((store) => {
+      const existingList = store.publicLists[listId];
 
-    if (!list) {
+      if (!existingList) {
+        return { error: 'not-found' };
+      }
+
+      if (existingList.userId !== userId) {
+        return { error: 'forbidden' };
+      }
+
+      delete store.publicLists[listId];
+      return existingList;
+    });
+
+    if (list?.error === 'not-found') {
       return res.status(404).json({ error: 'List not found' });
     }
 
-    if (list.userId !== userId) {
+    if (list?.error === 'forbidden') {
       return res.status(403).json({ error: 'You can only delete your own lists' });
     }
-
-    delete publicListsStore[listId];
 
     res.json({
       message: 'List deleted successfully',

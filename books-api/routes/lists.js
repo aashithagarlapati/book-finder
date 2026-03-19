@@ -1,15 +1,17 @@
 const express = require('express');
+const { readStore, updateStore } = require('../lib/store');
 
 const router = express.Router();
 
-// In-memory storage for reading lists (replace with Firestore in real implementation)
-const readingListsStore = {};
-
 // Helper to initialize user's list
 const ensureUserList = (userId) => {
-  if (!readingListsStore[userId]) {
-    readingListsStore[userId] = [];
-  }
+  return updateStore((store) => {
+    if (!store.readingLists[userId]) {
+      store.readingLists[userId] = [];
+    }
+
+    return store.readingLists[userId];
+  });
 };
 
 // Add book to reading list
@@ -24,20 +26,28 @@ router.post('/add', async (req, res) => {
   try {
     ensureUserList(userId);
 
-    // Check if book already in list
-    const exists = readingListsStore[userId].some((b) => b.id === book.id);
-    if (exists) {
+    const bookEntry = updateStore((store) => {
+      const userList = store.readingLists[userId] || [];
+      const exists = userList.some((entry) => entry.id === book.id);
+
+      if (exists) {
+        return null;
+      }
+
+      const nextBook = {
+        ...book,
+        addedAt: new Date().toISOString(),
+        status: 'want-to-read',
+      };
+
+      userList.push(nextBook);
+      store.readingLists[userId] = userList;
+      return nextBook;
+    });
+
+    if (!bookEntry) {
       return res.status(400).json({ error: 'Book already in your reading list' });
     }
-
-    // Add book to list
-    const bookEntry = {
-      ...book,
-      addedAt: new Date(),
-      status: 'want-to-read', // 'want-to-read', 'reading', 'read'
-    };
-
-    readingListsStore[userId].push(bookEntry);
 
     res.status(201).json({
       message: 'Book added to reading list',
@@ -59,7 +69,8 @@ router.get('/', async (req, res) => {
   try {
     ensureUserList(userId);
 
-    const books = readingListsStore[userId];
+    const store = readStore();
+    const books = store.readingLists[userId] || [];
 
     res.json({
       count: books.length,
@@ -81,17 +92,24 @@ router.delete('/:bookId', async (req, res) => {
   try {
     ensureUserList(userId);
 
-    const index = readingListsStore[userId].findIndex((b) => b.id === bookId);
+    const removedBook = updateStore((store) => {
+      const userList = store.readingLists[userId] || [];
+      const index = userList.findIndex((entry) => entry.id === bookId);
 
-    if (index === -1) {
+      if (index === -1) {
+        return null;
+      }
+
+      return userList.splice(index, 1)[0];
+    });
+
+    if (!removedBook) {
       return res.status(404).json({ error: 'Book not found in reading list' });
     }
 
-    const removedBook = readingListsStore[userId].splice(index, 1);
-
     res.json({
       message: 'Book removed from reading list',
-      book: removedBook[0],
+      book: removedBook,
     });
   } catch (error) {
     console.error('Remove from list error:', error);
@@ -119,14 +137,22 @@ router.patch('/:bookId', async (req, res) => {
   try {
     ensureUserList(userId);
 
-    const book = readingListsStore[userId].find((b) => b.id === bookId);
+    const book = updateStore((store) => {
+      const userList = store.readingLists[userId] || [];
+      const existingBook = userList.find((entry) => entry.id === bookId);
+
+      if (!existingBook) {
+        return null;
+      }
+
+      existingBook.status = normalizedStatus;
+      existingBook.updatedAt = new Date().toISOString();
+      return existingBook;
+    });
 
     if (!book) {
       return res.status(404).json({ error: 'Book not found in reading list' });
     }
-
-    book.status = normalizedStatus;
-    book.updatedAt = new Date();
 
     res.json({
       message: 'Book status updated',

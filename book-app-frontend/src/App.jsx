@@ -47,7 +47,12 @@ function App() {
     setUser(userData);
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    try {
+      await auth.logout();
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
     localStorage.removeItem('authToken');
     localStorage.removeItem('user');
     setUser(null);

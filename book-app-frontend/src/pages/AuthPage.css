@@ -122,6 +122,34 @@
   margin: 0;
 }
 
+.auth-mode-switch {
+  display: inline-flex;
+  gap: var(--sp-2);
+  padding: var(--sp-1);
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  background: var(--bg-raised);
+  margin-bottom: var(--sp-6);
+}
+
+.auth-mode-btn {
+  border-radius: var(--r-full);
+  padding: var(--sp-2) var(--sp-4);
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+}
+
+.auth-mode-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.auth-mode-btn--active {
+  background: var(--btn);
+  color: var(--text);
+  border-color: var(--btn);
+}
+
 .auth-switch {
   text-align: center;
   margin-top: var(--sp-6);
@@ -165,5 +193,13 @@
     padding: var(--sp-8) var(--sp-5);
     align-items: flex-start;
     padding-top: var(--sp-16);
+  }
+
+  .auth-mode-switch {
+    width: 100%;
+  }
+
+  .auth-mode-btn {
+    flex: 1;
   }
 }

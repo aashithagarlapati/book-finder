@@ -1,6 +1,13 @@
 import axios from 'axios';
+import {
+  isFirebaseClientConfigured,
+  signInWithFirebase,
+  signOutFirebase,
+  signUpWithFirebase,
+} from '../auth/firebase';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const DEMO_AUTH_ENABLED = import.meta.env.VITE_ENABLE_DEMO_AUTH !== 'false';
 
 const client = axios.create({
   baseURL: API_BASE_URL,
@@ -33,10 +40,56 @@ client.interceptors.response.use(
 );
 
 export const auth = {
-  signup: (email, password, displayName) =>
-    client.post('/auth/signup', { email, password, displayName }),
-  login: (email, password) => client.post('/auth/login', { email, password }),
+  isFirebaseConfigured: () => isFirebaseClientConfigured(),
+  isDemoEnabled: () => DEMO_AUTH_ENABLED,
+  isAccountModeAvailable: () => true,
+  signup: async (email, password, displayName, options = {}) => {
+    const mode = options.mode || 'account';
+
+    if (mode === 'account' && isFirebaseClientConfigured()) {
+      const session = await signUpWithFirebase({ email, password, displayName });
+      const verified = await client.post('/auth/session', { token: session.token, mode: 'firebase' });
+      return {
+        data: {
+          token: session.token,
+          user: verified.data.user,
+          mode: 'firebase',
+        },
+      };
+    }
+
+    return client.post('/auth/signup', {
+      email,
+      password,
+      displayName,
+      mode: mode === 'demo' ? 'demo' : 'local',
+    });
+  },
+  login: async (email, password, options = {}) => {
+    const mode = options.mode || 'account';
+
+    if (mode === 'account' && isFirebaseClientConfigured()) {
+      const session = await signInWithFirebase({ email, password });
+      const verified = await client.post('/auth/session', { token: session.token, mode: 'firebase' });
+      return {
+        data: {
+          token: session.token,
+          user: verified.data.user,
+          mode: 'firebase',
+        },
+      };
+    }
+
+    return client.post('/auth/login', {
+      email,
+      password,
+      mode: mode === 'demo' ? 'demo' : 'local',
+    });
+  },
   verify: (token) => client.post('/auth/verify', { token }),
+  logout: async () => {
+    await signOutFirebase();
+  },
 };
 
 export const books = {

@@ -10,6 +10,8 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: ALLOW_DEMO_AUTH
+        value: true
       - key: ALLOWED_ORIGINS
         value: https://bookfinder-web-j3hq.onrender.com
 

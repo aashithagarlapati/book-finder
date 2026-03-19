@@ -11,8 +11,28 @@ const QUOTES = [
 
 const QUOTE = QUOTES[Math.floor(Math.random() * QUOTES.length)];
 
+const getAuthErrorMessage = (error) => {
+  if (error?.response?.data?.error) {
+    return error.response.data.error;
+  }
+
+  if (typeof error?.message === 'string' && error.message.trim()) {
+    return error.message;
+  }
+
+  if (typeof error?.code === 'string' && error.code.trim()) {
+    return error.code;
+  }
+
+  return 'Authentication failed. Please try again.';
+};
+
 function AuthPage({ onLogin }) {
+  const accountAvailable = auth.isAccountModeAvailable();
+  const firebaseAvailable = auth.isFirebaseConfigured();
+  const demoAvailable = auth.isDemoEnabled();
   const [isSignup, setIsSignup] = useState(false);
+  const [authMode, setAuthMode] = useState(accountAvailable ? 'account' : 'demo');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
@@ -26,14 +46,14 @@ function AuthPage({ onLogin }) {
     try {
       if (isSignup) {
         if (!displayName) { setError('Display name is required'); setLoading(false); return; }
-        const res = await auth.signup(email, password, displayName);
+        const res = await auth.signup(email, password, displayName, { mode: authMode });
         if (res.data.token) onLogin(res.data.user, res.data.token);
       } else {
-        const res = await auth.login(email, password);
+        const res = await auth.login(email, password, { mode: authMode });
         if (res.data.token) onLogin(res.data.user, res.data.token);
       }
     } catch (err) {
-      setError(err.response?.data?.error || 'Authentication failed. Please try again.');
+      setError(getAuthErrorMessage(err));
     } finally {
       setLoading(false);
     }
@@ -75,6 +95,29 @@ function AuthPage({ onLogin }) {
             <h1>{isSignup ? 'Create an account' : 'Welcome back'}</h1>
             <p>{isSignup ? 'Join a community of readers.' : 'Sign in to your reading space.'}</p>
           </div>
+
+          {(accountAvailable || demoAvailable) && (
+            <div className="auth-mode-switch">
+              {accountAvailable && (
+                <button
+                  type="button"
+                  className={`auth-mode-btn ${authMode === 'account' ? 'auth-mode-btn--active' : ''}`}
+                  onClick={() => setAuthMode('account')}
+                >
+                  Account
+                </button>
+              )}
+              {demoAvailable && (
+                <button
+                  type="button"
+                  className={`auth-mode-btn ${authMode === 'demo' ? 'auth-mode-btn--active' : ''}`}
+                  onClick={() => setAuthMode('demo')}
+                >
+                  Demo mode
+                </button>
+              )}
+            </div>
+          )}
 
           {error && <div className="msg-error">{error}</div>}
 
@@ -129,7 +172,13 @@ function AuthPage({ onLogin }) {
           </p>
 
           <div className="auth-note">
-            <span>Demo mode — any email &amp; password works to get started.</span>
+            <span>
+              {authMode === 'demo'
+                ? 'Demo mode — any email and password works to get started.'
+                : firebaseAvailable
+                  ? 'Account mode — uses Firebase email/password authentication.'
+                  : 'Account mode — saves your login and lists for future sessions.'}
+            </span>
           </div>
         </div>
       </div>

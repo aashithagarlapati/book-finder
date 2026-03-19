@@ -1,10 +1,12 @@
 const admin = require('../config/firebase');
+const { parseLegacyMockToken, verifySignedToken } = require('../lib/tokens');
 
 const isFirebaseConfigured = Boolean(
-  process.env.FIREBASE_SERVICE_ACCOUNT_KEY && process.env.FIREBASE_PROJECT_ID
+  admin.__hasAdminCredentials && process.env.FIREBASE_PROJECT_ID
 );
 
 const useMockAuth = process.env.NODE_ENV !== 'production' || !isFirebaseConfigured;
+const allowDemoAuth = process.env.ALLOW_DEMO_AUTH !== 'false';
 
 const authenticate = async (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -16,30 +18,43 @@ const authenticate = async (req, res, next) => {
   const token = authHeader.substring(7);
 
   try {
-    if (token.endsWith('.mock-signature')) {
-      try {
-        const payload = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
+    const signedPayload = verifySignedToken(token);
+
+    if (signedPayload && (signedPayload.kind === 'local' || (signedPayload.kind === 'demo' && allowDemoAuth))) {
+      req.user = {
+        uid: signedPayload.uid || 'dev-user',
+        email: signedPayload.email || 'dev@example.com',
+        displayName: signedPayload.displayName || signedPayload.email || 'Reader',
+      };
+      return next();
+    }
+
+    if (allowDemoAuth) {
+      const legacyPayload = parseLegacyMockToken(token);
+
+      if (legacyPayload) {
         req.user = {
-          uid: payload.uid || 'dev-user',
-          email: payload.email || 'dev@example.com',
+          uid: legacyPayload.uid || 'dev-user',
+          email: legacyPayload.email || 'dev@example.com',
+          displayName: legacyPayload.displayName || legacyPayload.email || 'Reader',
         };
         return next();
-      } catch (parseError) {
-        return res.status(401).json({ error: 'Invalid token format' });
       }
     }
 
     if (useMockAuth) {
-      try {
-        const payload = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
+      const legacyPayload = parseLegacyMockToken(token);
+
+      if (legacyPayload) {
         req.user = {
-          uid: payload.uid || 'dev-user',
-          email: payload.email || 'dev@example.com',
+          uid: legacyPayload.uid || 'dev-user',
+          email: legacyPayload.email || 'dev@example.com',
+          displayName: legacyPayload.displayName || legacyPayload.email || 'Reader',
         };
         return next();
-      } catch (parseError) {
-        return res.status(401).json({ error: 'Invalid token format' });
       }
+
+      return res.status(401).json({ error: 'Invalid token format' });
     }
 
     // Verify the Firebase ID token
@@ -53,23 +68,7 @@ const authenticate = async (req, res, next) => {
       };
       next();
     } catch (authError) {
-      // If Firebase auth fails, create a mock user for local/demo mode
-      if (useMockAuth) {
-        console.warn('⚠️ Firebase auth failed, using mock user for development');
-        // For development, we'll extract user ID from token (basic JWT-like structure)
-        try {
-          const payload = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
-          req.user = {
-            uid: payload.uid || 'dev-user',
-            email: payload.email || 'dev@example.com',
-          };
-          next();
-        } catch (parseError) {
-          return res.status(401).json({ error: 'Invalid token format' });
-        }
-      } else {
-        throw authError;
-      }
+      throw authError;
     }
   } catch (error) {
     console.error('Auth error:', error);
