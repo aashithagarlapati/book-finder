@@ -1,0 +1,306 @@
+import os
+
+base = "/Users/prag/Library/CloudStorage/OneDrive-Personal/Aashitha/Dev/book-app/book-app-frontend/src"
+
+index_css = """\
+/* ============================================================
+   BookFinder — Design System
+   Fonts: Playfair Display (serif headings) + Inter (body)
+   Palette: black bg · soft blue cards · dark red accent · off-white text
+   ============================================================ */
+
+:root {
+  /* Background tiers */
+  --bg:          #000000;
+  --bg-raised:   #0c0c0c;
+  --bg-surface:  #111111;
+
+  /* Brand colours */
+  --card:        #4a6fa5;
+  --card-dark:   #3a5a8a;
+  --card-light:  #7aa2d4;
+  --btn:         #8b2e2e;
+  --btn-hover:   #a63535;
+
+  /* Text */
+  --text:        #f0ece4;
+  --text-muted:  #a89f92;
+  --text-faint:  #6b6359;
+
+  /* Borders */
+  --border:       rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.16);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Font sizes */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.0625rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.5rem;
+
+  /* Spacing */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.25rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+
+  /* Border radius */
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   12px;
+  --r-xl:   16px;
+  --r-2xl:  24px;
+  --r-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.6);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.7);
+
+  /* Transition */
+  --ease: 0.2s ease;
+}
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--text);
+  line-height: 1.2;
+}
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl);  }
+p  { color: var(--text-muted); }
+
+a {
+  color: var(--card-light);
+  text-decoration: none;
+}
+a:hover { color: var(--text); }
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--sp-6);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+button, .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border: none;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background var(--ease), color var(--ease), border-color var(--ease), transform var(--ease);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: var(--sp-3) var(--sp-5);
+}
+button:active, .btn:active { transform: scale(0.97); }
+button:disabled, .btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+.btn-primary {
+  background: var(--btn);
+  color: var(--text);
+  border: 1px solid var(--btn);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--btn-hover);
+  border-color: var(--btn-hover);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border-hover);
+  color: var(--text-muted);
+}
+.btn-ghost:hover:not(:disabled) {
+  border-color: var(--card);
+  color: var(--text);
+  background: rgba(74,111,165,0.08);
+}
+
+.btn-secondary {
+  background: rgba(74,111,165,0.15);
+  border: 1px solid var(--card);
+  color: var(--card-light);
+}
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(74,111,165,0.25);
+}
+
+.btn-sm  { padding: var(--sp-2) var(--sp-4); font-size: var(--text-xs); }
+.btn-lg  { padding: var(--sp-4) var(--sp-8); font-size: var(--text-base); }
+.btn-full { width: 100%; }
+
+/* ── Form elements ───────────────────────────────────────────── */
+input, textarea, select {
+  width: 100%;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-raised);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--r-md);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  transition: border-color var(--ease), box-shadow var(--ease);
+  outline: none;
+}
+input::placeholder, textarea::placeholder { color: var(--text-faint); }
+input:focus, textarea:focus, select:focus {
+  border-color: var(--card);
+  box-shadow: 0 0 0 3px rgba(74,111,165,0.15);
+}
+textarea { resize: vertical; min-height: 80px; }
+select { cursor: pointer; }
+label {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--sp-2);
+}
+
+.form-group { margin-bottom: var(--sp-5); }
+
+/* ── Cards ───────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-6);
+}
+
+.card-subtle {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+}
+
+/* ── Feedback ────────────────────────────────────────────────── */
+.msg-error {
+  padding: var(--sp-3) var(--sp-4);
+  background: rgba(139,46,46,0.15);
+  border: 1px solid rgba(139,46,46,0.4);
+  border-radius: var(--r-md);
+  color: #e07070;
+  font-size: var(--text-sm);
+  margin-bottom: var(--sp-4);
+}
+
+.msg-success {
+  padding: var(--sp-3) var(--sp-4);
+  background: rgba(56,161,105,0.12);
+  border: 1px solid rgba(56,161,105,0.35);
+  border-radius: var(--r-md);
+  color: #68d391;
+  font-size: var(--text-sm);
+  margin-bottom: var(--sp-4);
+}
+
+/* ── Spinner ─────────────────────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-top-color: var(--text);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Badge helpers ───────────────────────────────────────────── */
+.badge-blue {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: rgba(74,111,165,0.15);
+  border: 1px solid var(--card);
+  border-radius: var(--r-full);
+  font-size: var(--text-xs);
+  color: var(--card-light);
+}
+.badge-red {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: rgba(139,46,46,0.15);
+  border: 1px solid var(--btn);
+  border-radius: var(--r-full);
+  font-size: var(--text-xs);
+  color: #e07070;
+}
+
+/* ── Grid helpers ────────────────────────────────────────────── */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--sp-4);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-raised); }
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: var(--r-full);
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ── Selection ───────────────────────────────────────────────── */
+::selection { background: rgba(74,111,165,0.35); color: var(--text); }
+"""
+
+path = os.path.join(base, "index.css")
+with open(path, "w") as f:
+    f.write(index_css)
+print(f"✓ index.css  ({len(index_css.splitlines())} lines)")
