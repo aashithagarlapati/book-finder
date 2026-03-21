@@ -1,6 +1,7 @@
 const express = require('express');
 const authenticate = require('../middleware/authenticate');
 const { readStore, updateStore } = require('../lib/store');
+const { recordActivity } = require('../lib/activity');
 
 const router = express.Router();
 
@@ -22,6 +23,7 @@ router.post('/create', authenticate, async (req, res) => {
       const nextList = {
         id: listId,
         userId,
+        owner: req.user.displayName,
         listName,
         description: description || '',
         books,
@@ -31,6 +33,18 @@ router.post('/create', authenticate, async (req, res) => {
       };
 
       store.publicLists[listId] = nextList;
+      if (nextList.isPublic) {
+        recordActivity(store, {
+          userId,
+          displayName: req.user.displayName,
+          type: 'shared-public-list',
+          list: {
+            id: nextList.id,
+            listName: nextList.listName,
+            count: nextList.books.length,
+          },
+        });
+      }
       return nextList;
     });
 
@@ -143,8 +157,21 @@ router.patch('/:listId', authenticate, async (req, res) => {
       if (listName) existingList.listName = listName;
       if (description !== undefined) existingList.description = description;
       if (books && books.length > 0) existingList.books = books;
+      const wasPublic = existingList.isPublic;
       if (isPublic !== undefined) existingList.isPublic = isPublic;
       existingList.updatedAt = new Date().toISOString();
+      if (!wasPublic && existingList.isPublic) {
+        recordActivity(store, {
+          userId,
+          displayName: req.user.displayName,
+          type: 'shared-public-list',
+          list: {
+            id: existingList.id,
+            listName: existingList.listName,
+            count: existingList.books.length,
+          },
+        });
+      }
       return existingList;
     });
 

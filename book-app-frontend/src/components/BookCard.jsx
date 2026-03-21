@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { buildBookPagePath } from '../utils/bookLinks';
 import './BookCard.css';
 
 function BookCard({
@@ -12,19 +14,23 @@ function BookCard({
 }) {
   return (
     <div className="book-card">
-      <div className="book-cover">
-        {book.cover ? (
-          <img src={book.cover} alt={book.title} loading="lazy" />
-        ) : (
-          <div className="book-cover-placeholder">
-            <span className="book-cover-initials">
-              {book.title?.charAt(0) ?? '□'}
-            </span>
-          </div>
-        )}
-      </div>
+      <Link className="book-link book-cover-link" to={buildBookPagePath(book)}>
+        <div className="book-cover">
+          {book.cover ? (
+            <img src={book.cover} alt={book.title} loading="lazy" />
+          ) : (
+            <div className="book-cover-placeholder">
+              <span className="book-cover-initials">
+                {book.title?.charAt(0) ?? '□'}
+              </span>
+            </div>
+          )}
+        </div>
+      </Link>
       <div className="book-info">
-        <div className="book-title">{book.title}</div>
+        <Link className="book-link" to={buildBookPagePath(book)}>
+          <div className="book-title">{book.title}</div>
+        </Link>
         <div className="book-author">{book.author}</div>
         {book.year && <div className="book-year">{book.year}</div>}
         <div className="book-actions">

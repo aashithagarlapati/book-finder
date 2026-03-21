@@ -7,6 +7,14 @@
       "passwordHash": "90a2616c87265c31bcaa6fa4db790ee6:7db4eb11dbe7e4f51d68b1eac2d1ae2f000b2bcef353198e60bee6f914e2b554586f571741a8340ebf8fcc6df735042379412b44fe84074862d8d3ed2dddb519",
       "createdAt": "2026-03-19T09:57:00.330Z",
       "updatedAt": "2026-03-19T09:57:00.330Z"
+    },
+    {
+      "uid": "user-1774106230941",
+      "email": "aashithagarlapati@gmail.com",
+      "displayName": "Aashitha",
+      "passwordHash": "fca07873e008bf50c6b3745b2ac6639e:8eca5c5c2c26541b0c3e09f0c6812bd2036342f4fbebdae5d8e5cdaac47532e45266a686910387611b8875cfdc92d573e7ab19b8414b6f70eef833f2662c1454",
+      "createdAt": "2026-03-21T15:17:10.977Z",
+      "updatedAt": "2026-03-21T15:17:10.977Z"
     }
   ],
   "readingLists": {
@@ -99,6 +107,144 @@
         "addedAt": "2026-03-21T07:57:23.977Z",
         "status": "want-to-read",
         "updatedAt": "2026-03-21T07:55:19.710Z"
+      },
+      {
+        "id": "/works/OL82586W",
+        "title": "Harry Potter and the Deathly Hallows",
+        "author": "J. K. Rowling",
+        "year": "Unknown",
+        "cover": "https://covers.openlibrary.org/b/id/15158660-M.jpg",
+        "description": "Harry Potter is leaving Privet Drive for the last time. But as he climbs into the sidecar of Hagrid’s motorbike and they take to the skies, he knows Lord Voldemort and the Death Eaters will not be far behind.\r\n\r\nThe protective charm that has kept him safe until now is broken. But the Dark Lord is breathing fear into everything he loves. And he knows he can’t keep hiding.\r\n\r\nTo stop Voldemort, Harry knows he must find the remaining Horcruxes and destroy them.\r\n\r\nHe will have to face his enemy in one final battle.\r\n\r\n([source][1])\r\n\r\n\r\n----------\r\nSee also:\r\n\r\n - [Harry Potter and the Deathly Hallows: 2/2][2]\r\n\r\n\r\n  [1]: https://www.jkrowling.com/book/harry-potter-deathly-hallows/\r\n  [2]: https://openlibrary.org/works/OL17922343W/Harry_Potter_and_the_Deathly_Hallows_Chapters_20-36",
+        "genres": [
+          "the Elder Wand",
+          "children's books",
+          "dementors",
+          "good and evil",
+          "Juvenile literature",
+          "Juvenile works",
+          "Death",
+          "Fiction",
+          "Wizards",
+          "New York Times bestseller",
+          "nyt:series_books=2006-09-16",
+          "Schools",
+          "Magic",
+          "Magia",
+          "Ficción juvenil",
+          "Novela fantástica",
+          "Magos",
+          "Escuelas",
+          "Juvenile fiction",
+          "dark magic",
+          "Coming of age",
+          "heroics",
+          "fantasy",
+          "action",
+          "adventure",
+          "orphans",
+          "foster homes",
+          "young adult",
+          "children",
+          "children's literature",
+          "boarding school",
+          "wizardry",
+          "mystery",
+          "kids",
+          "witchcraft",
+          "war",
+          "Magie",
+          "Magiciens",
+          "Roman pour la jeunesse",
+          "Mort",
+          "Sorcellerie",
+          "Romans, nouvelles, etc. pour la jeunesse",
+          "Internats",
+          "Fantasy fiction",
+          "Roman fantastique",
+          "Ecoles",
+          "Boarding schools",
+          "Sorciers",
+          "Hogwarts School of Witchcraft and Wizardry (Imaginary place) -- Juvenile fiction",
+          "Hogwarts School of Witchcraft and Wizardry (Imaginary place)",
+          "Harry Potter (Fictitious character)",
+          "Potter, Harry (Fictitious character) -- Juvenile fiction",
+          "Wizards -- Fiction",
+          "Magic -- Fiction",
+          "Schools -- Fiction",
+          "Magos -- Ficción juvenil",
+          "Magia -- Ficción juvenil",
+          "Escuelas -- Ficción juvenil",
+          "England -- Fiction",
+          "Inglaterra -- Ficción juvenil",
+          "Hermione Granger (Fictitious character)",
+          "Hogwarts School of Witchcraft and Wizardry (Imaginary organization)",
+          "Ron Weasley (Fictitious character)",
+          "School stories",
+          "Family",
+          "Orphans & Foster Homes",
+          "Social Themes",
+          "Fantasy & Magic",
+          "Fictional Works",
+          "Bildungsromans",
+          "Witches",
+          "Friendship",
+          "Reading Level-Grade 9",
+          "Reading Level-Grade 11",
+          "Reading Level-Grade 10",
+          "Reading Level-Grade 12",
+          "Potter, harry (fictitious character), fiction",
+          "Wizards, fiction",
+          "Hogwarts school of witchcraft and wizardry (imaginary organization), fiction",
+          "England, fiction",
+          "Schools, fiction",
+          "Magic, fiction",
+          "Children's fiction",
+          "English literature",
+          "Fiction, fantasy, general",
+          "Méchanceté",
+          "Quête (Littérature)",
+          "Potter, Harry (Personnage fictif)",
+          "Large type books",
+          "New York Times reviewed",
+          "Poudlard (Organisation imaginaire)",
+          "Écoles",
+          "Illusion (performing art)",
+          "Schools (institutions)",
+          "Schools (buildings)",
+          "Child and youth fiction",
+          "death eater",
+          "ron",
+          "Severus Snape (Fictitious character)"
+        ],
+        "pages": null,
+        "editions": null,
+        "addedAt": "2026-03-21T15:10:43.511Z",
+        "status": "read",
+        "updatedAt": "2026-03-21T15:49:09.876Z"
+      },
+      {
+        "id": "/works/OL19794412W",
+        "title": "Percy Jackson and the Singer of Apollo",
+        "author": "Rick Riordan",
+        "year": "Unknown",
+        "cover": "https://covers.openlibrary.org/b/id/8597962-M.jpg",
+        "description": "When the god Apollo asks for a favour, it's never going to be straightforward.\r\n\r\nPercy Jackson is celebrating a friend's birthday when Apollo turns up. The god is supposed to perform on Mount Olympus, but one of his four beautiful singers is missing.\r\n\r\nSo Percy sets off to bring her back - but one of the singers is after a shot at a solo career, and is holding up New York! With the bright lights of Broadway in the background, can Percy find the rogue performer, and return her to Apollo - in time for his big number on Mount Olympus?",
+        "genres": [
+          "Juvenile fiction",
+          "Greek Gods",
+          "Apollo",
+          "God",
+          "Percy",
+          "Mount Olympus",
+          "Rouge Singer",
+          "Missing",
+          "Performance"
+        ],
+        "pages": null,
+        "editions": null,
+        "addedAt": "2026-03-21T15:45:36.146Z",
+        "status": "reading",
+        "updatedAt": "2026-03-21T15:46:05.246Z"
       }
     ],
     "user-a@b.com": [
@@ -170,6 +316,159 @@
         "addedAt": "2026-03-21T07:55:00.168Z",
         "status": "want-to-read",
         "updatedAt": "2026-03-21T07:55:19.710Z"
+      }
+    ],
+    "user-1774106230941": [
+      {
+        "id": "/works/OL82560W",
+        "title": "Harry Potter and the Goblet of Fire",
+        "author": "J. K. Rowling",
+        "year": "Unknown",
+        "cover": "https://covers.openlibrary.org/b/id/12059372-M.jpg",
+        "description": "The fourth book in the Harry Potter franchise sees Harry returning for his fourth year at Hogwarts School of Witchcraft and Wizardry, along with his friends, Ron and Hermione . There is an upcoming tournament between the three major schools of magic, with one participant selected from each school by the Goblet of Fire. When Harry's name is drawn, even though he is not eligible and is a fourth player, he must compete in the dangerous contest.\r\n\r\n\r\n----------\r\nContains:\r\n\r\n - [Harry Potter and the Goblet of Fire. 2/4](https://openlibrary.org/works/OL17910198W/Harry_Potter_and_the_Goblet_of_Fire._2_4)",
+        "genres": [
+          "orphans",
+          "foster homes",
+          "Waisenkind",
+          "Intrige",
+          "Wiederbelebung",
+          "Bewährung",
+          "Wettkampf",
+          "Junge",
+          "Sport",
+          "Rettung",
+          "Jugendbuch",
+          "Mord",
+          "magier",
+          "fictitious schools",
+          "juvenile works",
+          "juvenile audience",
+          "juvenile literature",
+          "children's stories",
+          "Fiction",
+          "Hugo Award Winner",
+          "Wizards",
+          "New York Times bestseller",
+          "nyt:series_books=2006-09-16",
+          "Schools",
+          "award:hugo_award=novel",
+          "School",
+          "Magic",
+          "Open Library Staff Picks",
+          "Sorcellerie",
+          "Écoles",
+          "award:hugo_award=2001",
+          "Sorciers",
+          "Romans nouvelles etc. pour la jeunesse",
+          "Hogwarts School of Witchcraft and Wizardry (Imaginary organization)",
+          "Hermione Granger (Fictitious character)",
+          "Juvenile fiction",
+          "Ron Weasley (Fictitious character)",
+          "Harry Potter (Fictitious character)",
+          "Magia",
+          "Magos",
+          "Ficción juvenil",
+          "Escuelas",
+          "Ficción",
+          "Translations from English",
+          "Magi",
+          "Chinese fiction",
+          "Family",
+          "Fantasy fiction",
+          "Hogwarts School of Witchcraft and Wizardry (Imaginary place)",
+          "Orphans & Foster Homes",
+          "Social Themes",
+          "Fantasy & Magic",
+          "Friendship",
+          "Hugo Award",
+          "School stories",
+          "Harry Potter (Fictional character)",
+          "Reading Level-Grade 9",
+          "Reading Level-Grade 11",
+          "Reading Level-Grade 10",
+          "Reading Level-Grade 12",
+          "Large type books",
+          "Potter, harry (fictitious character), fiction",
+          "Children's fiction",
+          "England, fiction",
+          "Schools, fiction",
+          "Wizards, fiction",
+          "Magic, fiction",
+          "Hogwarts school of witchcraft and wizardry (imaginary organization), fiction",
+          "English literature",
+          "Potter, harry (fictitious character)",
+          "Fantasy",
+          "Juvenile films",
+          "Drama",
+          "Películas cinematográficas juveniles",
+          "Film adaptations",
+          "Hechiceros",
+          "Potter, Harry (Personaje literario)",
+          "Novela juvenil",
+          "Inglaterra",
+          "Novelas inglesas",
+          "Children's stories, English",
+          "Adventure and adventurers, fiction",
+          "Action & Adventure",
+          "Friendship, fiction",
+          "Poudlard (Organisation imaginaire)",
+          "Romans, nouvelles, etc. pour la jeunesse",
+          "French language",
+          "Reading materials",
+          "Korean language materials",
+          "Angol irodalom",
+          "Ifjúsági regény",
+          "English Fantasy literature",
+          "Translations into Marathi"
+        ],
+        "pages": null,
+        "editions": null,
+        "addedAt": "2026-03-21T15:22:22.333Z",
+        "status": "read",
+        "updatedAt": "2026-03-21T15:46:37.473Z"
+      },
+      {
+        "id": "/works/OL42541309W",
+        "title": "Hermione Granger",
+        "author": "J. K. Rowling",
+        "year": 2025,
+        "cover": null,
+        "relevanceScore": 1,
+        "addedAt": "2026-03-21T15:51:13.873Z",
+        "status": "want-to-read"
+      },
+      {
+        "id": "/works/OL42541314W",
+        "title": "Ron Weasley",
+        "author": "J. K. Rowling",
+        "year": 2025,
+        "cover": null,
+        "relevanceScore": 1,
+        "addedAt": "2026-03-21T15:51:13.877Z",
+        "status": "want-to-read"
+      },
+      {
+        "id": "/works/OL492647W",
+        "title": "The Titan's Curse",
+        "author": "Rick Riordan",
+        "year": 2007,
+        "cover": "https://covers.openlibrary.org/b/id/14601475-M.jpg",
+        "relevanceScore": 7,
+        "matchedGenres": [
+          "Greek Gods",
+          "Young adult fiction",
+          "Percy Jackson (Fictitious character)",
+          "Anthologies",
+          "Percy Jackson (Fictional character)",
+          "Classics",
+          "Legends, Myths, Fables",
+          "Greek & Roman",
+          "Greek Mythology",
+          "Juvenile fiction"
+        ],
+        "addedAt": "2026-03-21T15:51:13.878Z",
+        "status": "want-to-read",
+        "updatedAt": "2026-03-21T07:55:06.072Z"
       }
     ]
   },
@@ -253,6 +552,61 @@
       "isPublic": true,
       "createdAt": "2026-03-21T07:56:10.620Z",
       "updatedAt": "2026-03-21T08:24:37.262Z"
+    },
+    "list-4": {
+      "id": "list-4",
+      "userId": "user-1773914220290",
+      "owner": "Praveen",
+      "listName": "Fav List",
+      "description": "",
+      "books": [
+        {
+          "id": "/works/OL42541309W",
+          "title": "Hermione Granger",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": null,
+          "relevanceScore": 1,
+          "addedAt": "2026-03-19T10:06:10.437Z",
+          "status": "want-to-read"
+        },
+        {
+          "id": "/works/OL42541314W",
+          "title": "Ron Weasley",
+          "author": "J. K. Rowling",
+          "year": 2025,
+          "cover": null,
+          "relevanceScore": 1,
+          "addedAt": "2026-03-19T10:06:11.501Z",
+          "status": "want-to-read"
+        },
+        {
+          "id": "/works/OL492647W",
+          "title": "The Titan's Curse",
+          "author": "Rick Riordan",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/14601475-M.jpg",
+          "relevanceScore": 7,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ],
+          "addedAt": "2026-03-21T07:57:23.963Z",
+          "status": "want-to-read",
+          "updatedAt": "2026-03-21T07:55:06.072Z"
+        }
+      ],
+      "isPublic": true,
+      "createdAt": "2026-03-21T15:50:56.273Z",
+      "updatedAt": "2026-03-21T15:50:56.273Z"
     }
   },
   "recommendations": {
@@ -1143,7 +1497,258 @@
       "createdAt": "2026-03-21T07:54:55.111Z"
     }
   },
+  "reviews": {
+    "/works/OL15598036W": [
+      {
+        "id": "review-3",
+        "bookId": "/works/OL15598036W",
+        "userId": "user-1773914220290",
+        "displayName": "Praveen",
+        "content": "Great book!",
+        "likes": [],
+        "createdAt": "2026-03-21T15:49:45.125Z"
+      }
+    ]
+  },
+  "follows": {
+    "user-1774106230941": [
+      "user-1773914220290"
+    ],
+    "user-1773914220290": [
+      "user-1774106230941"
+    ]
+  },
+  "activities": [
+    {
+      "id": "activity-18",
+      "createdAt": "2026-03-21T15:51:13.878Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reading-list-added",
+      "status": "want-to-read",
+      "book": {
+        "id": "/works/OL492647W",
+        "title": "The Titan's Curse",
+        "author": "Rick Riordan",
+        "cover": "https://covers.openlibrary.org/b/id/14601475-M.jpg"
+      }
+    },
+    {
+      "id": "activity-17",
+      "createdAt": "2026-03-21T15:51:13.877Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reading-list-added",
+      "status": "want-to-read",
+      "book": {
+        "id": "/works/OL42541314W",
+        "title": "Ron Weasley",
+        "author": "J. K. Rowling",
+        "cover": null
+      }
+    },
+    {
+      "id": "activity-16",
+      "createdAt": "2026-03-21T15:51:13.873Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reading-list-added",
+      "status": "want-to-read",
+      "book": {
+        "id": "/works/OL42541309W",
+        "title": "Hermione Granger",
+        "author": "J. K. Rowling",
+        "cover": null
+      }
+    },
+    {
+      "id": "activity-15",
+      "createdAt": "2026-03-21T15:50:56.274Z",
+      "userId": "user-1773914220290",
+      "displayName": "Praveen",
+      "type": "shared-public-list",
+      "list": {
+        "id": "list-4",
+        "listName": "Fav List",
+        "count": 3
+      }
+    },
+    {
+      "id": "activity-14",
+      "createdAt": "2026-03-21T15:49:45.125Z",
+      "userId": "user-1773914220290",
+      "displayName": "Praveen",
+      "type": "reviewed-book",
+      "reviewId": "review-3",
+      "reviewText": "Great book!",
+      "book": {
+        "id": "/works/OL15598036W",
+        "title": "Sidney Sheldon's After the Darkness",
+        "author": "Sidney Sheldon",
+        "cover": "https://covers.openlibrary.org/b/id/6675324-M.jpg"
+      }
+    },
+    {
+      "id": "activity-13",
+      "createdAt": "2026-03-21T15:49:09.876Z",
+      "userId": "user-1773914220290",
+      "displayName": "Praveen",
+      "type": "reading-status-updated",
+      "status": "read",
+      "book": {
+        "id": "/works/OL82586W",
+        "title": "Harry Potter and the Deathly Hallows",
+        "author": "J. K. Rowling",
+        "cover": "https://covers.openlibrary.org/b/id/15158660-M.jpg"
+      }
+    },
+    {
+      "id": "activity-12",
+      "createdAt": "2026-03-21T15:46:37.473Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reading-status-updated",
+      "status": "read",
+      "book": {
+        "id": "/works/OL82560W",
+        "title": "Harry Potter and the Goblet of Fire",
+        "author": "J. K. Rowling",
+        "cover": "https://covers.openlibrary.org/b/id/12059372-M.jpg"
+      }
+    },
+    {
+      "id": "activity-11",
+      "createdAt": "2026-03-21T15:46:21.784Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reading-status-updated",
+      "status": "reading",
+      "book": {
+        "id": "/works/OL82560W",
+        "title": "Harry Potter and the Goblet of Fire",
+        "author": "J. K. Rowling",
+        "cover": "https://covers.openlibrary.org/b/id/12059372-M.jpg"
+      }
+    },
+    {
+      "id": "activity-10",
+      "createdAt": "2026-03-21T15:46:05.247Z",
+      "userId": "user-1773914220290",
+      "displayName": "Praveen",
+      "type": "reading-status-updated",
+      "status": "reading",
+      "book": {
+        "id": "/works/OL19794412W",
+        "title": "Percy Jackson and the Singer of Apollo",
+        "author": "Rick Riordan",
+        "cover": "https://covers.openlibrary.org/b/id/8597962-M.jpg"
+      }
+    },
+    {
+      "id": "activity-9",
+      "createdAt": "2026-03-21T15:46:03.507Z",
+      "userId": "user-1773914220290",
+      "displayName": "Praveen",
+      "type": "reading-status-updated",
+      "status": "reading",
+      "book": {
+        "id": "/works/OL19794412W",
+        "title": "Percy Jackson and the Singer of Apollo",
+        "author": "Rick Riordan",
+        "cover": "https://covers.openlibrary.org/b/id/8597962-M.jpg"
+      }
+    },
+    {
+      "id": "activity-8",
+      "createdAt": "2026-03-21T15:45:36.146Z",
+      "userId": "user-1773914220290",
+      "displayName": "Praveen",
+      "type": "reading-list-added",
+      "status": "want-to-read",
+      "book": {
+        "id": "/works/OL19794412W",
+        "title": "Percy Jackson and the Singer of Apollo",
+        "author": "Rick Riordan",
+        "cover": "https://covers.openlibrary.org/b/id/8597962-M.jpg"
+      }
+    },
+    {
+      "id": "activity-7",
+      "createdAt": "2026-03-21T15:22:22.333Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reading-list-added",
+      "status": "want-to-read",
+      "book": {
+        "id": "/works/OL82560W",
+        "title": "Harry Potter and the Goblet of Fire",
+        "author": "J. K. Rowling",
+        "cover": "https://covers.openlibrary.org/b/id/12059372-M.jpg"
+      }
+    },
+    {
+      "id": "activity-4",
+      "createdAt": "2026-03-21T15:10:55.204Z",
+      "userId": "user-1773914220290",
+      "displayName": "Praveen",
+      "type": "reading-status-updated",
+      "status": "reading",
+      "book": {
+        "id": "/works/OL82586W",
+        "title": "Harry Potter and the Deathly Hallows",
+        "author": "J. K. Rowling",
+        "cover": "https://covers.openlibrary.org/b/id/15158660-M.jpg"
+      }
+    },
+    {
+      "id": "activity-3",
+      "createdAt": "2026-03-21T15:10:43.511Z",
+      "userId": "user-1773914220290",
+      "displayName": "Praveen",
+      "type": "reading-list-added",
+      "status": "want-to-read",
+      "book": {
+        "id": "/works/OL82586W",
+        "title": "Harry Potter and the Deathly Hallows",
+        "author": "J. K. Rowling",
+        "cover": "https://covers.openlibrary.org/b/id/15158660-M.jpg"
+      }
+    }
+  ],
+  "notifications": {
+    "user-1774106230941": [
+      {
+        "id": "notif-1",
+        "type": "new-follower",
+        "message": "Praveen started following you",
+        "actorId": "user-1773914220290",
+        "actorName": "Praveen",
+        "ref": {
+          "userId": "user-1773914220290"
+        },
+        "read": true,
+        "createdAt": "2026-03-21T15:44:56.984Z"
+      }
+    ],
+    "user-1773914220290": [
+      {
+        "id": "notif-2",
+        "type": "new-follower",
+        "message": "Aashitha started following you",
+        "actorId": "user-1774106230941",
+        "actorName": "Aashitha",
+        "ref": {
+          "userId": "user-1774106230941"
+        },
+        "read": true,
+        "createdAt": "2026-03-21T15:45:07.846Z"
+      }
+    ]
+  },
   "counters": {
-    "publicList": 3
+    "publicList": 5,
+    "review": 4,
+    "activity": 19,
+    "notification": 4
   }
 }

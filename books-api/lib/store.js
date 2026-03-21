@@ -9,8 +9,15 @@ const defaultStore = () => ({
   readingLists: {},
   publicLists: {},
   recommendations: {},
+  reviews: {},
+  follows: {},
+  activities: [],
+  notifications: {},
   counters: {
     publicList: 1,
+    review: 1,
+    activity: 1,
+    notification: 1,
   },
 });
 

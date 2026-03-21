@@ -9,6 +9,9 @@ import RecommendationPage from './pages/RecommendationPage';
 import ReadingListPage from './pages/ReadingListPage';
 import PublicListsPage from './pages/PublicListsPage';
 import AccountsAdminPage from './pages/AccountsAdminPage';
+import BookExplorerPage from './pages/BookExplorerPage';
+import SocialPage from './pages/SocialPage';
+import UserProfilePage from './pages/UserProfilePage';
 import './App.css';
 
 function App() {
@@ -83,8 +86,11 @@ function App() {
               <>
                 <Route path="/" element={<Dashboard user={user} />} />
                 <Route path="/recommendations" element={<RecommendationPage user={user} />} />
+                <Route path="/books" element={<BookExplorerPage user={user} />} />
                 <Route path="/my-list" element={<ReadingListPage user={user} />} />
                 <Route path="/public-lists" element={<PublicListsPage user={user} />} />
+                <Route path="/social" element={<SocialPage user={user} />} />
+                <Route path="/social/users/:userId" element={<UserProfilePage user={user} />} />
                 <Route path="/admin/accounts" element={<AccountsAdminPage />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </>

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { lists } from '../api/client';
+import { buildBookPagePath } from '../utils/bookLinks';
 import './ReadingListPage.css';
 
 const FILTERS = [
@@ -131,15 +133,17 @@ function ReadingListPage({ user }) {
           <div className="list-items">
             {filtered.map((book) => (
               <div key={book.id} className="list-item">
-                <div className="list-item-cover">
-                  {book.cover
-                    ? <img src={book.cover} alt={book.title} />
-                    : <div className="no-cover">{book.title?.charAt(0) ?? 'B'}</div>}
-                </div>
-                <div className="list-item-info">
-                  <div className="list-item-title">{book.title}</div>
-                  <div className="list-item-author">{book.author}</div>
-                </div>
+                <Link className="list-item-main-link" to={buildBookPagePath(book)}>
+                  <div className="list-item-cover">
+                    {book.cover
+                      ? <img src={book.cover} alt={book.title} />
+                      : <div className="no-cover">{book.title?.charAt(0) ?? 'B'}</div>}
+                  </div>
+                  <div className="list-item-info">
+                    <div className="list-item-title">{book.title}</div>
+                    <div className="list-item-author">{book.author}</div>
+                  </div>
+                </Link>
                 <div className="list-item-actions">
                   <span className={`status-badge ${STATUS_CLASS[book.status] || 'want'}`}>
                     {STATUS_LABELS[book.status] || book.status}

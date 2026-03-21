@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { publicLists, lists } from '../api/client';
+import { buildBookPagePath } from '../utils/bookLinks';
 import './PublicListsPage.css';
 
 function PublicListsPage({ user }) {
@@ -253,16 +255,16 @@ function PublicListsPage({ user }) {
                 {list.books?.length > 0 && (
                   <div className="list-card-books">
                     {list.books.map((b) => (
-                      <label key={b.id} className="list-card-book list-card-book--selectable">
+                      <div key={b.id} className="list-card-book list-card-book--selectable">
                         <input
                           type="checkbox"
                           checked={(selectedByList[list.id] || []).includes(b.id)}
                           onChange={() => toggleBookForList(list.id, b.id)}
                         />
-                        <span>
+                        <Link className="book-inline-link" to={buildBookPagePath(b)}>
                           <strong>{b.title}</strong> by {b.author}
-                        </span>
-                      </label>
+                        </Link>
+                      </div>
                     ))}
                   </div>
                 )}
@@ -321,7 +323,9 @@ function PublicListsPage({ user }) {
                   <div className="list-card-books">
                     {(list.books || []).slice(0, 4).map((book) => (
                       <div key={book.id} className="list-card-book">
-                        <strong>{book.title}</strong> by {book.author}
+                        <Link className="book-inline-link" to={buildBookPagePath(book)}>
+                          <strong>{book.title}</strong> by {book.author}
+                        </Link>
                       </div>
                     ))}
                   </div>
@@ -378,32 +382,37 @@ function PublicListsPage({ user }) {
                 <div className="form-group">
                   <label>Pick books from your shelf</label>
                   {userBooks.length === 0 ? (
-                    <p style={{ color: 'var(--text-muted)', fontSize: 'var(--text-sm)' }}>
+                    <p className="modal-inline-note">
                       Your reading list is empty. Add books first.
                     </p>
                   ) : (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, maxHeight: 200, overflowY: 'auto' }}>
+                    <div className="modal-book-picker">
                       {userBooks.map((book) => (
-                        <label key={book.id} style={{ display: 'flex', gap: 8, alignItems: 'center', cursor: 'pointer', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
+                        <label key={book.id} className="modal-book-option">
                           <input
                             type="checkbox"
+                            className="modal-book-checkbox"
                             checked={selectedBooks.some((b) => b.id === book.id)}
                             onChange={() => toggleBook(book)}
-                            style={{ accentColor: 'var(--card)' }}
                           />
-                          <span><strong style={{ color: 'var(--text)' }}>{book.title}</strong> — {book.author}</span>
+                          <span className="modal-book-meta">
+                            <Link className="book-inline-link" to={buildBookPagePath(book)}>
+                              <strong>{book.title}</strong>
+                            </Link>
+                            <span className="modal-book-author">{book.author}</span>
+                          </span>
                         </label>
                       ))}
                     </div>
                   )}
                 </div>
                 <div className="form-group">
-                  <label style={{ display: 'flex', gap: 8, alignItems: 'center', cursor: 'pointer', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
+                  <label className="modal-visibility-row">
                     <input
                       type="checkbox"
+                      className="modal-book-checkbox"
                       checked={form.isPublic}
                       onChange={(e) => setForm({ ...form, isPublic: e.target.checked })}
-                      style={{ accentColor: 'var(--card)' }}
                     />
                     Make this list public
                   </label>

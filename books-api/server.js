@@ -11,6 +11,9 @@ const booksRoutes = require('./routes/books');
 const recommendationsRoutes = require('./routes/recommendations');
 const listsRoutes = require('./routes/lists');
 const publicListsRoutes = require('./routes/publicLists');
+const reviewsRoutes = require('./routes/reviews');
+const socialRoutes = require('./routes/social');
+const notificationsRoutes = require('./routes/notifications');
 
 // Middleware
 const authenticate = require('./middleware/authenticate');
@@ -51,6 +54,9 @@ app.use('/api/books', booksRoutes);
 app.use('/api/recommendations', authenticate, recommendationsRoutes);
 app.use('/api/lists', authenticate, listsRoutes);
 app.use('/api/public-lists', publicListsRoutes);
+app.use('/api/reviews', reviewsRoutes);
+app.use('/api/social', socialRoutes);
+app.use('/api/notifications', notificationsRoutes);
 
 // Root info
 app.get('/', (req, res) => {
@@ -64,6 +70,9 @@ app.get('/', (req, res) => {
       recommendations: '/api/recommendations',
       lists: '/api/lists',
       publicLists: '/api/public-lists',
+      reviews: '/api/reviews',
+      social: '/api/social',
+      notifications: '/api/notifications',
     },
   });
 });

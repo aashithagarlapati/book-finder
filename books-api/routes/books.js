@@ -6,6 +6,27 @@ const router = express.Router();
 const OPENLIBRARY_API = 'https://openlibrary.org/search.json';
 const OPENLIBRARY_COVERS_API = 'https://covers.openlibrary.org/b/id';
 
+const normalizeDescription = (description) => {
+  if (!description) return null;
+  if (typeof description === 'string') return description;
+  if (typeof description?.value === 'string') return description.value;
+  return null;
+};
+
+const readAuthorName = async (authorRef) => {
+  if (!authorRef) return null;
+  if (authorRef.name) return authorRef.name;
+  if (!authorRef.author?.key && !authorRef.key) return null;
+
+  const authorKey = authorRef.author?.key || authorRef.key;
+  try {
+    const response = await axios.get(`https://openlibrary.org${authorKey}.json`, { timeout: 5000 });
+    return response.data?.name || null;
+  } catch {
+    return null;
+  }
+};
+
 const getCoverUrlFromDoc = (doc) => {
   if (!doc) return null;
 
@@ -217,6 +238,78 @@ router.get('/summary', async (req, res) => {
     console.error('Book summary error:', error.message);
     return res.status(500).json({
       error: 'Failed to generate summary',
+      message: error.message,
+    });
+  }
+});
+
+// Get detailed book information using query params to avoid slash path issues.
+router.get('/details', async (req, res) => {
+  const { bookId, title, author } = req.query;
+
+  if (!bookId && !title) {
+    return res.status(400).json({ error: 'bookId or title is required' });
+  }
+
+  try {
+    let book = null;
+
+    if (bookId && String(bookId).startsWith('/works/')) {
+      const response = await axios.get(`https://openlibrary.org${bookId}.json`, { timeout: 5000 });
+      const work = response.data;
+      const authorNames = await Promise.all((work.authors || []).slice(0, 3).map(readAuthorName));
+      book = {
+        id: work.key || bookId,
+        title: work.title || title || 'Unknown Title',
+        author: authorNames.filter(Boolean).join(', ') || author || 'Unknown Author',
+        year: work.first_publish_date || 'Unknown',
+        cover: Array.isArray(work.covers) && work.covers[0] ? `${OPENLIBRARY_COVERS_API}/${work.covers[0]}-M.jpg` : null,
+        description: normalizeDescription(work.description),
+        genres: Array.isArray(work.subjects) ? work.subjects : [],
+        pages: work.number_of_pages || null,
+        editions: work.edition_count || null,
+      };
+    }
+
+    if (!book && title) {
+      const searchResponse = await axios.get(OPENLIBRARY_API, {
+        params: { title, author, limit: 1 },
+        timeout: 5000,
+      });
+      const doc = searchResponse.data.docs?.[0];
+      if (!doc) {
+        return res.status(404).json({ error: 'Book not found' });
+      }
+
+      const fallbackId = doc.key || null;
+      let description = doc.first_sentence ? doc.first_sentence[0] : null;
+      if (fallbackId) {
+        try {
+          const response = await axios.get(`https://openlibrary.org${fallbackId}.json`, { timeout: 5000 });
+          description = normalizeDescription(response.data?.description) || description;
+        } catch {
+          // Keep fallback description from search doc.
+        }
+      }
+
+      book = {
+        id: fallbackId,
+        title: doc.title || title,
+        author: (doc.author_name && doc.author_name[0]) || author || 'Unknown Author',
+        year: doc.first_publish_year || 'Unknown',
+        cover: getCoverUrlFromDoc(doc),
+        description,
+        genres: Array.isArray(doc.subject) ? doc.subject : [],
+        pages: null,
+        editions: doc.edition_count || null,
+      };
+    }
+
+    return res.json(book);
+  } catch (error) {
+    console.error('Get book details error:', error.message);
+    return res.status(500).json({
+      error: 'Failed to fetch book details',
       message: error.message,
     });
   }

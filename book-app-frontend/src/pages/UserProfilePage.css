@@ -1,0 +1,115 @@
+.user-profile-page {
+  padding-bottom: var(--sp-16);
+}
+
+.user-profile-loading {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.profile-hero {
+  margin-top: var(--sp-10);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-5);
+}
+
+.profile-back {
+  display: inline-block;
+  margin-bottom: var(--sp-3);
+  font-size: var(--text-sm);
+}
+
+.profile-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+}
+
+.profile-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px var(--sp-3);
+  background: rgba(74, 111, 165, 0.12);
+  border: 1px solid transparent;
+  border-radius: var(--r-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--btn);
+  cursor: pointer;
+  transition: background var(--ease), border-color var(--ease);
+}
+
+.profile-stat-badge:hover,
+.profile-stat-badge.is-active {
+  background: rgba(74, 111, 165, 0.24);
+  border-color: var(--btn);
+}
+
+.profile-user-list-section {
+  margin-top: var(--sp-6);
+}
+
+.profile-tab-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.profile-user-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.profile-user-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+
+.profile-layout {
+  margin-top: var(--sp-6);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+}
+
+.profile-section-head {
+  margin-bottom: var(--sp-4);
+}
+
+.profile-section-head p {
+  margin-top: 4px;
+  font-size: var(--text-sm);
+}
+
+.profile-list-grid,
+.profile-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.profile-list-card span,
+.profile-activity-head {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+}
+
+@media (max-width: 900px) {
+  .profile-hero,
+  .profile-layout {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+}

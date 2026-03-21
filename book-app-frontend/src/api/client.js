@@ -110,6 +110,13 @@ export const admin = {
 export const books = {
   search: (query, limit = 20) => client.get('/books/search', { params: { query, limit } }),
   getById: (bookId) => client.get(`/books/${encodeURIComponent(bookId)}`),
+  getDetails: (book) => client.get('/books/details', {
+    params: {
+      bookId: book.id,
+      title: book.title,
+      author: book.author,
+    },
+  }),
   getSummary: (book) => client.get('/books/summary', {
     params: {
       bookId: book.id,
@@ -125,10 +132,35 @@ export const recommendations = {
 };
 
 export const lists = {
-  add: (book) => client.post('/lists/add', { book }),
+  add: (book, status) => client.post('/lists/add', { book, status }),
   getMyList: () => client.get('/lists'),
   remove: (bookId) => client.delete(`/lists/${encodeURIComponent(bookId)}`),
   updateStatus: (bookId, status) => client.patch('/lists/status', { bookId, status }),
+};
+
+export const reviews = {
+  getForBook: (bookId) => client.get('/reviews', { params: { bookId } }),
+  create: (payload) => client.post('/reviews', payload),
+  update: (reviewId, content) => client.patch(`/reviews/${encodeURIComponent(reviewId)}`, { content }),
+  remove: (reviewId) => client.delete(`/reviews/${encodeURIComponent(reviewId)}`),
+  like: (reviewId) => client.post(`/reviews/${encodeURIComponent(reviewId)}/like`),
+  unlike: (reviewId) => client.delete(`/reviews/${encodeURIComponent(reviewId)}/like`),
+};
+
+export const social = {
+  listUsers: (query = '') => client.get('/social/users', { params: query ? { q: query } : {} }),
+  follow: (userId) => client.post(`/social/follow/${encodeURIComponent(userId)}`),
+  unfollow: (userId) => client.delete(`/social/follow/${encodeURIComponent(userId)}`),
+  getFeed: () => client.get('/social/feed'),
+  getProfile: (userId) => client.get(`/social/users/${encodeURIComponent(userId)}`),
+  getFollowers: (userId) => client.get(`/social/users/${encodeURIComponent(userId)}/followers`),
+  getFollowing: (userId) => client.get(`/social/users/${encodeURIComponent(userId)}/following`),
+};
+
+export const notifications = {
+  getAll: () => client.get('/notifications'),
+  markAllRead: () => client.patch('/notifications/read'),
+  clearAll: () => client.delete('/notifications'),
 };
 
 export const publicLists = {

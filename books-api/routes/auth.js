@@ -357,6 +357,34 @@ router.delete('/admin/accounts/:uid', (req, res) => {
       });
     }
 
+    if (store.follows) {
+      delete store.follows[uid];
+      Object.keys(store.follows).forEach((sourceUserId) => {
+        store.follows[sourceUserId] = (store.follows[sourceUserId] || []).filter((followedUserId) => followedUserId !== uid);
+      });
+    }
+
+    if (store.reviews) {
+      Object.keys(store.reviews).forEach((bookId) => {
+        store.reviews[bookId] = (store.reviews[bookId] || []).filter((review) => review.userId !== uid);
+        if (store.reviews[bookId].length === 0) {
+          delete store.reviews[bookId];
+        }
+      });
+    }
+
+    if (Array.isArray(store.activities)) {
+      store.activities = store.activities.filter((activity) => activity.userId !== uid);
+    }
+
+    if (store.notifications) {
+      delete store.notifications[uid];
+      // Remove notifications sent to other users by this actor
+      Object.keys(store.notifications).forEach((targetUid) => {
+        store.notifications[targetUid] = (store.notifications[targetUid] || []).filter((n) => n.actorId !== uid);
+      });
+    }
+
     return {
       uid: user.uid,
       email: user.email,
