@@ -24,6 +24,26 @@
   gap: var(--sp-4);
 }
 
+.lists-section {
+  margin-bottom: var(--sp-10);
+}
+
+.section-head {
+  margin-bottom: var(--sp-4);
+}
+
+.section-head h2 {
+  margin: 0 0 4px 0;
+  font-size: var(--text-2xl);
+  font-family: var(--font-serif);
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
 .list-card {
   padding: var(--sp-5);
   border: 1px solid var(--border);
@@ -79,6 +99,9 @@
   flex-direction: column;
   gap: 4px;
   margin-bottom: var(--sp-4);
+  max-height: 190px;
+  overflow: auto;
+  padding-right: 4px;
 }
 .list-card-book {
   font-size: var(--text-xs);
@@ -89,15 +112,67 @@
 }
 .list-card-book strong { color: var(--text-muted); font-weight: 500; }
 
+.list-card-book--selectable {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  align-items: start;
+  gap: 8px;
+  cursor: pointer;
+  white-space: normal;
+}
+
+.list-card-book--selectable input {
+  accent-color: var(--card);
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+}
+
+.list-card-book--selectable.is-added {
+  opacity: 0.55;
+}
+
+.list-card-book--selectable span {
+  display: block;
+  line-height: 1.45;
+}
+
 .list-card-meta {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--sp-3);
   padding-top: var(--sp-3);
   border-top: 1px solid var(--border);
 }
-.list-card-owner { font-size: var(--text-xs); color: var(--text-faint); }
-.list-card-actions { display: flex; gap: var(--sp-2); }
+.list-card-owner {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+}
+
+.list-card-actions {
+  display: grid;
+  gap: var(--sp-2);
+  width: 100%;
+}
+
+.list-card-actions .btn {
+  min-width: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.list-card-actions--triple {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.list-card-actions--double {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.list-card-actions .btn:disabled {
+  opacity: 0.65;
+}
 
 /* Create Modal */
 .modal-overlay {
@@ -137,4 +212,8 @@
 @media (max-width: 600px) {
   .lists-grid { grid-template-columns: 1fr; }
   .public-lists-page .page-header { flex-direction: column; align-items: flex-start; }
+  .list-card-actions--triple,
+  .list-card-actions--double {
+    grid-template-columns: 1fr;
+  }
 }

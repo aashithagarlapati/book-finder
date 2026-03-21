@@ -98,7 +98,7 @@ router.get('/:listId', async (req, res) => {
 });
 
 // Get user's own lists (public and private)
-router.get('/user/:userId', async (req, res) => {
+router.get('/user/:userId', authenticate, async (req, res) => {
   const { userId } = req.params;
   const currentUserId = req.user ? req.user.uid : null;
 

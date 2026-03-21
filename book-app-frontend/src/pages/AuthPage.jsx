@@ -3,13 +3,67 @@ import { auth } from '../api/client';
 import './AuthPage.css';
 
 const QUOTES = [
-  { text: "A reader lives a thousand lives before he dies. The man who never reads lives only one.", author: "George R.R. Martin" },
-  { text: "Not all those who wander are lost.", author: "J.R.R. Tolkien" },
-  { text: "So many books, so little time.", author: "Frank Zappa" },
-  { text: "One must always be careful of books, and what is inside them.", author: "Cassandra Clare" },
+  {
+    text: "Why, sometimes I've believed as many as six impossible things before breakfast.",
+    author: "Lewis Carroll",
+    book: "Alice's Adventures in Wonderland",
+  },
+  {
+    text: "Curiouser and curiouser!",
+    author: "Lewis Carroll",
+    book: "Alice's Adventures in Wonderland",
+  },
+  {
+    text: "There's no place like home.",
+    author: "L. Frank Baum",
+    book: "The Wonderful Wizard of Oz",
+  },
+  {
+    text: "Somewhere over the rainbow, skies are blue.",
+    author: "L. Frank Baum",
+    book: "The Wonderful Wizard of Oz",
+  },
+  {
+    text: "All the world is made of faith, and trust, and pixie dust.",
+    author: "J.M. Barrie",
+    book: "Peter Pan",
+  },
+  {
+    text: "Second star to the right and straight on till morning.",
+    author: "J.M. Barrie",
+    book: "Peter Pan",
+  },
+  {
+    text: "Isn't it splendid to think of all the things there are to find out about?",
+    author: "L.M. Montgomery",
+    book: "Anne of Green Gables",
+  },
+  {
+    text: "Tomorrow is always fresh, with no mistakes in it yet.",
+    author: "L.M. Montgomery",
+    book: "Anne of Green Gables",
+  },
+  {
+    text: "Fifteen men on the dead man's chest - Yo-ho-ho, and a bottle of rum!",
+    author: "Robert Louis Stevenson",
+    book: "Treasure Island",
+  },
+  {
+    text: "I'd rather take coffee than compliments just now.",
+    author: "Louisa May Alcott",
+    book: "Little Women",
+  },
 ];
 
-const QUOTE = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+const getQuoteSet = () => {
+  const shuffled = [...QUOTES].sort(() => Math.random() - 0.5);
+  return {
+    featured: shuffled[0],
+    supporting: shuffled.slice(1, 4),
+  };
+};
+
+const QUOTE_SET = getQuoteSet();
 
 const getAuthErrorMessage = (error) => {
   if (error?.response?.data?.error) {
@@ -77,10 +131,22 @@ function AuthPage({ onLogin }) {
             <span className="panel-icon">◈</span>
             <span className="panel-wordmark">BookFinder</span>
           </div>
+          <p className="auth-panel-kicker">Stories that grow with you</p>
           <blockquote className="auth-quote">
-            <p>“{QUOTE.text}”</p>
-            <cite>— {QUOTE.author}</cite>
+            <p>“{QUOTE_SET.featured.text}”</p>
+            <cite>
+              — {QUOTE_SET.featured.author}
+              <span>{QUOTE_SET.featured.book}</span>
+            </cite>
           </blockquote>
+          <div className="auth-quote-stack" aria-label="More book lines">
+            {QUOTE_SET.supporting.map((quote) => (
+              <div key={`${quote.author}-${quote.text}`} className="quote-chip">
+                <p>“{quote.text}”</p>
+                <small>{quote.book}</small>
+              </div>
+            ))}
+          </div>
           <div className="auth-panel-lines" aria-hidden="true">
             {Array.from({ length: 9 }).map((_, i) => (
               <div key={i} className="panel-line" style={{ '--i': i }} />

@@ -1,40 +1,15 @@
 {
   "users": [
     {
-      "uid": "user-1773914167861",
-      "email": "praveen.test@bookfinder.local",
-      "displayName": "Praveen",
-      "passwordHash": "65431eeb3079333208676d4e18474b80:4b1bc9ca284d17e950da863cd0e4c9bf4c214b43a7f6aed7a2308340b44c97593c281c7934e843220695dcb4e5f5a71db0d67d6a23d583074d02cc3e9226238e",
-      "createdAt": "2026-03-19T09:56:07.884Z",
-      "updatedAt": "2026-03-19T09:56:07.884Z"
-    },
-    {
       "uid": "user-1773914220290",
       "email": "dexterslab@outlook.com",
       "displayName": "Praveen",
       "passwordHash": "90a2616c87265c31bcaa6fa4db790ee6:7db4eb11dbe7e4f51d68b1eac2d1ae2f000b2bcef353198e60bee6f914e2b554586f571741a8340ebf8fcc6df735042379412b44fe84074862d8d3ed2dddb519",
       "createdAt": "2026-03-19T09:57:00.330Z",
       "updatedAt": "2026-03-19T09:57:00.330Z"
-    },
-    {
-      "uid": "user-1773914643651",
-      "email": "recotest2@bookfinder.local",
-      "displayName": "recotest2",
-      "passwordHash": "8fd185ea109ccc3ef082728fd3a3f075:3bf5a2d281f97ec0f12008c9886647a400294a0596b48a2a528b25a08fd59a0eb7b1981741120cb55c1ca67974f362bd67d58c31759274c3ae53699bea178bcc",
-      "createdAt": "2026-03-19T10:04:03.674Z",
-      "updatedAt": "2026-03-19T10:04:03.674Z"
     }
   ],
   "readingLists": {
-    "user-1773914167861": [
-      {
-        "id": "/works/OL893415W",
-        "title": "Dune",
-        "author": "Frank Herbert",
-        "addedAt": "2026-03-19T09:56:07.938Z",
-        "status": "want-to-read"
-      }
-    ],
     "user-1773914220290": [
       {
         "id": "/works/OL42541309W",
@@ -55,203 +30,232 @@
         "relevanceScore": 1,
         "addedAt": "2026-03-19T10:06:11.501Z",
         "status": "want-to-read"
+      },
+      {
+        "id": "/works/OL492647W",
+        "title": "The Titan's Curse",
+        "author": "Rick Riordan",
+        "year": 2007,
+        "cover": "https://covers.openlibrary.org/b/id/14601475-M.jpg",
+        "relevanceScore": 7,
+        "matchedGenres": [
+          "Greek Gods",
+          "Young adult fiction",
+          "Percy Jackson (Fictitious character)",
+          "Anthologies",
+          "Percy Jackson (Fictional character)",
+          "Classics",
+          "Legends, Myths, Fables",
+          "Greek & Roman",
+          "Greek Mythology",
+          "Juvenile fiction"
+        ],
+        "addedAt": "2026-03-21T07:57:23.963Z",
+        "status": "want-to-read",
+        "updatedAt": "2026-03-21T07:55:06.072Z"
+      },
+      {
+        "id": "/works/OL492646W",
+        "title": "The Sea of Monsters",
+        "author": "Rick Riordan",
+        "year": 2006,
+        "cover": "https://covers.openlibrary.org/b/id/108909-M.jpg",
+        "relevanceScore": 5,
+        "matchedGenres": [
+          "Greek Gods",
+          "Young adult fiction",
+          "Percy Jackson (Fictitious character)",
+          "Anthologies",
+          "Percy Jackson (Fictional character)",
+          "Classics",
+          "Legends, Myths, Fables",
+          "Greek & Roman",
+          "Greek Mythology",
+          "Juvenile fiction"
+        ],
+        "addedAt": "2026-03-21T07:57:23.972Z",
+        "status": "want-to-read",
+        "updatedAt": "2026-03-21T07:55:17.638Z"
+      },
+      {
+        "id": "/works/OL15401200W",
+        "title": "The Lost Hero",
+        "author": "Rick Riordan",
+        "year": 2010,
+        "cover": "https://covers.openlibrary.org/b/id/12848687-M.jpg",
+        "relevanceScore": 5,
+        "matchedGenres": [
+          "Greek Gods",
+          "Young adult fiction",
+          "Percy Jackson (Fictitious character)",
+          "Anthologies",
+          "Percy Jackson (Fictional character)",
+          "Classics",
+          "Legends, Myths, Fables",
+          "Greek & Roman",
+          "Greek Mythology",
+          "Juvenile fiction"
+        ],
+        "addedAt": "2026-03-21T07:57:23.977Z",
+        "status": "want-to-read",
+        "updatedAt": "2026-03-21T07:55:19.710Z"
+      }
+    ],
+    "user-a@b.com": [
+      {
+        "id": "/works/OL492647W",
+        "title": "The Titan's Curse",
+        "author": "Rick Riordan",
+        "year": 2007,
+        "cover": "https://covers.openlibrary.org/b/id/14601475-M.jpg",
+        "relevanceScore": 7,
+        "matchedGenres": [
+          "Greek Gods",
+          "Young adult fiction",
+          "Percy Jackson (Fictitious character)",
+          "Anthologies",
+          "Percy Jackson (Fictional character)",
+          "Classics",
+          "Legends, Myths, Fables",
+          "Greek & Roman",
+          "Greek Mythology",
+          "Juvenile fiction"
+        ],
+        "addedAt": "2026-03-21T07:54:58.481Z",
+        "status": "reading",
+        "updatedAt": "2026-03-21T07:55:06.072Z"
+      },
+      {
+        "id": "/works/OL492646W",
+        "title": "The Sea of Monsters",
+        "author": "Rick Riordan",
+        "year": 2006,
+        "cover": "https://covers.openlibrary.org/b/id/108909-M.jpg",
+        "relevanceScore": 5,
+        "matchedGenres": [
+          "Greek Gods",
+          "Young adult fiction",
+          "Percy Jackson (Fictitious character)",
+          "Anthologies",
+          "Percy Jackson (Fictional character)",
+          "Classics",
+          "Legends, Myths, Fables",
+          "Greek & Roman",
+          "Greek Mythology",
+          "Juvenile fiction"
+        ],
+        "addedAt": "2026-03-21T07:54:59.279Z",
+        "status": "reading",
+        "updatedAt": "2026-03-21T07:55:17.638Z"
+      },
+      {
+        "id": "/works/OL15401200W",
+        "title": "The Lost Hero",
+        "author": "Rick Riordan",
+        "year": 2010,
+        "cover": "https://covers.openlibrary.org/b/id/12848687-M.jpg",
+        "relevanceScore": 5,
+        "matchedGenres": [
+          "Greek Gods",
+          "Young adult fiction",
+          "Percy Jackson (Fictitious character)",
+          "Anthologies",
+          "Percy Jackson (Fictional character)",
+          "Classics",
+          "Legends, Myths, Fables",
+          "Greek & Roman",
+          "Greek Mythology",
+          "Juvenile fiction"
+        ],
+        "addedAt": "2026-03-21T07:55:00.168Z",
+        "status": "want-to-read",
+        "updatedAt": "2026-03-21T07:55:19.710Z"
       }
     ]
   },
-  "publicLists": {},
+  "publicLists": {
+    "list-1": {
+      "id": "list-1",
+      "userId": "user-a@b.com",
+      "listName": "A's List",
+      "description": "",
+      "books": [
+        {
+          "id": "/works/OL492647W",
+          "title": "The Titan's Curse",
+          "author": "Rick Riordan",
+          "year": 2007,
+          "cover": "https://covers.openlibrary.org/b/id/14601475-M.jpg",
+          "relevanceScore": 7,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ],
+          "addedAt": "2026-03-21T07:54:58.481Z",
+          "status": "reading",
+          "updatedAt": "2026-03-21T07:55:06.072Z"
+        },
+        {
+          "id": "/works/OL492646W",
+          "title": "The Sea of Monsters",
+          "author": "Rick Riordan",
+          "year": 2006,
+          "cover": "https://covers.openlibrary.org/b/id/108909-M.jpg",
+          "relevanceScore": 5,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ],
+          "addedAt": "2026-03-21T07:54:59.279Z",
+          "status": "reading",
+          "updatedAt": "2026-03-21T07:55:17.638Z"
+        },
+        {
+          "id": "/works/OL15401200W",
+          "title": "The Lost Hero",
+          "author": "Rick Riordan",
+          "year": 2010,
+          "cover": "https://covers.openlibrary.org/b/id/12848687-M.jpg",
+          "relevanceScore": 5,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ],
+          "addedAt": "2026-03-21T07:55:00.168Z",
+          "status": "want-to-read",
+          "updatedAt": "2026-03-21T07:55:19.710Z"
+        }
+      ],
+      "isPublic": true,
+      "createdAt": "2026-03-21T07:56:10.620Z",
+      "updatedAt": "2026-03-21T08:24:37.262Z"
+    }
+  },
   "recommendations": {
-    "user-1773914643651": {
-      "inputBooks": [
-        {
-          "id": "/works/FAKE001",
-          "title": "Invisible Cities",
-          "author": "Italo Calvino"
-        },
-        {
-          "id": "/works/FAKE002",
-          "title": "If on a winter night a traveler",
-          "author": "Italo Calvino"
-        },
-        {
-          "id": "/works/FAKE003",
-          "title": "The Name of the Rose",
-          "author": "Umberto Eco"
-        },
-        {
-          "id": "/works/FAKE004",
-          "title": "Foucaults Pendulum",
-          "author": "Umberto Eco"
-        },
-        {
-          "id": "/works/FAKE005",
-          "title": "The Garden of Forking Paths",
-          "author": "Jorge Luis Borges"
-        }
-      ],
-      "recommendations": [
-        {
-          "id": "/works/OL34026241W",
-          "title": "If on a Winter's Night a Traveller",
-          "author": "Italo Calvino",
-          "year": 2023,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL34031084W",
-          "title": "Last Comes the Raven",
-          "author": "Italo Calvino",
-          "year": 2023,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL28798542W",
-          "title": "Last Comes the Raven",
-          "author": "Italo Calvino",
-          "year": 2023,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL28347251W",
-          "title": "Written World and the Unwritten World",
-          "author": "Italo Calvino",
-          "year": 2023,
-          "cover": "https://covers.openlibrary.org/b/id/14775914-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL25202770W",
-          "title": "Written World and the Unwritten World",
-          "author": "Italo Calvino",
-          "year": 2022,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL27821194W",
-          "title": "Cosmicomics",
-          "author": "Italo Calvino",
-          "year": 2022,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL28801127W",
-          "title": "Cosmicomics",
-          "author": "Italo Calvino",
-          "year": 2022,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL21279580W",
-          "title": "The written world and the unwritten world",
-          "author": "Italo Calvino",
-          "year": 2022,
-          "cover": "https://covers.openlibrary.org/b/id/13846724-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL26385390W",
-          "title": "Los amores difíciles",
-          "author": "Italo Calvino",
-          "year": 2021,
-          "cover": "https://covers.openlibrary.org/b/id/12332380-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL26271819W",
-          "title": "Buyulu Kus",
-          "author": "Italo Calvino",
-          "year": 2021,
-          "cover": "https://covers.openlibrary.org/b/id/12273970-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL26271846W",
-          "title": "Yengec Prens",
-          "author": "Italo Calvino",
-          "year": 2021,
-          "cover": "https://covers.openlibrary.org/b/id/12273997-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL26353112W",
-          "title": "Azicik Acikli Masallar",
-          "author": "Italo Calvino",
-          "year": 2021,
-          "cover": "https://covers.openlibrary.org/b/id/12297812-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL21292750W",
-          "title": "Last Comes the Raven",
-          "author": "Italo Calvino",
-          "year": 2021,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL25813765W",
-          "title": "Mindful of Venice",
-          "author": "David Whittaker",
-          "year": 2020,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL28345194W",
-          "title": "Narrative of Trajan's Column",
-          "author": "Italo Calvino",
-          "year": 2020,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL26272261W",
-          "title": "Efsunlu Kiz Masallari",
-          "author": "Italo Calvino",
-          "year": 2020,
-          "cover": "https://covers.openlibrary.org/b/id/12274427-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL21689326W",
-          "title": "Narrative of Trajan's Column",
-          "author": "Italo Calvino",
-          "year": 2020,
-          "cover": null,
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL24245224W",
-          "title": "Tomás Saraceno",
-          "author": "Italo Calvino",
-          "year": 2020,
-          "cover": "https://covers.openlibrary.org/b/id/10725175-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL24424591W",
-          "title": "La nuvola di smog-La formica argentina",
-          "author": "Italo Calvino",
-          "year": 2019,
-          "cover": "https://covers.openlibrary.org/b/id/10982790-M.jpg",
-          "relevanceScore": 1
-        },
-        {
-          "id": "/works/OL24424592W",
-          "title": "La nuvola di smog-La formica argentina",
-          "author": "Italo Calvino",
-          "year": 2019,
-          "cover": "https://covers.openlibrary.org/b/id/10982791-M.jpg",
-          "relevanceScore": 1
-        }
-      ],
-      "createdAt": "2026-03-19T10:04:46.053Z"
-    },
     "user-1773914220290": {
       "inputBooks": [
         {
@@ -684,51 +688,51 @@
     "user-a@b.com": {
       "inputBooks": [
         {
-          "id": "/works/OL82586W",
-          "title": "Harry Potter and the Deathly Hallows",
-          "author": "J. K. Rowling",
-          "year": 2007,
-          "cover": "https://covers.openlibrary.org/b/id/15158660-M.jpg",
+          "id": "/works/OL17054790W",
+          "title": "Percy Jackson's Greek Gods",
+          "author": "Rick Riordan",
+          "year": 2006,
+          "cover": "https://covers.openlibrary.org/b/id/7396660-M.jpg",
           "isbn": null,
           "description": null,
           "genres": []
         },
         {
-          "id": "/works/OL82563W",
-          "title": "Harry Potter and the Philosopher's Stone",
-          "author": "J. K. Rowling",
-          "year": 1997,
-          "cover": "https://covers.openlibrary.org/b/id/15155833-M.jpg",
+          "id": "/works/OL19669249W",
+          "title": "Percy Jackson's Greek heroes",
+          "author": "Rick Riordan",
+          "year": 2015,
+          "cover": "https://covers.openlibrary.org/b/id/13012029-M.jpg",
           "isbn": null,
           "description": null,
           "genres": []
         },
         {
-          "id": "/works/OL82536W",
-          "title": "Harry Potter and the Prisoner of Azkaban",
-          "author": "J. K. Rowling",
-          "year": 1999,
-          "cover": "https://covers.openlibrary.org/b/id/10580435-M.jpg",
+          "id": "/works/OL14955042W",
+          "title": "Percy Jackson and the Olympians Hardcover Boxed Set",
+          "author": "Rick Riordan",
+          "year": 2009,
+          "cover": "https://covers.openlibrary.org/b/id/6304834-M.jpg",
           "isbn": null,
           "description": null,
           "genres": []
         },
         {
-          "id": "/works/OL82565W",
-          "title": "Harry Potter and the Half-Blood Prince",
-          "author": "J. K. Rowling",
-          "year": 2005,
-          "cover": "https://covers.openlibrary.org/b/id/10716273-M.jpg",
+          "id": "/works/OL17685821W",
+          "title": "Percy Jackson & the Olympians",
+          "author": "Mary-Jane Knight",
+          "year": 2010,
+          "cover": "https://covers.openlibrary.org/b/id/6307924-M.jpg",
           "isbn": null,
           "description": null,
           "genres": []
         },
         {
-          "id": "/works/OL82537W",
-          "title": "Harry Potter and the Chamber of Secrets",
-          "author": "J. K. Rowling",
-          "year": 1998,
-          "cover": "https://covers.openlibrary.org/b/id/15158664-M.jpg",
+          "id": "/works/OL8125148W",
+          "title": "Sir Percy hits back",
+          "author": "Emma Orczy",
+          "year": 1927,
+          "cover": "https://covers.openlibrary.org/b/id/502827-M.jpg",
           "isbn": null,
           "description": null,
           "genres": []
@@ -736,318 +740,43 @@
       ],
       "recommendations": [
         {
-          "id": "/works/OL27482W",
-          "title": "The Hobbit",
-          "author": "J.R.R. Tolkien",
-          "year": 1937,
-          "cover": "https://covers.openlibrary.org/b/id/14627509-M.jpg",
-          "relevanceScore": 4,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL5759980W",
-          "title": "The Pigeon finds a hot dog!",
-          "author": "Mo Willems",
-          "year": 2004,
-          "cover": "https://covers.openlibrary.org/b/id/3334789-M.jpg",
-          "relevanceScore": 3,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL5682519W",
-          "title": "Dog Days",
-          "author": "Jeff Kinney",
+          "id": "/works/OL492647W",
+          "title": "The Titan's Curse",
+          "author": "Rick Riordan",
           "year": 2007,
-          "cover": "https://covers.openlibrary.org/b/id/12366143-M.jpg",
-          "relevanceScore": 3,
+          "cover": "https://covers.openlibrary.org/b/id/14601475-M.jpg",
+          "relevanceScore": 7,
           "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
           ]
         },
         {
-          "id": "/works/OL86707W",
-          "title": "Stellaluna",
-          "author": "Janell Cannon",
-          "year": 1990,
-          "cover": "https://covers.openlibrary.org/b/id/11026591-M.jpg",
-          "relevanceScore": 3,
+          "id": "/works/OL492646W",
+          "title": "The Sea of Monsters",
+          "author": "Rick Riordan",
+          "year": 2006,
+          "cover": "https://covers.openlibrary.org/b/id/108909-M.jpg",
+          "relevanceScore": 5,
           "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL17603394W",
-          "title": "Double Down",
-          "author": "Jeff Kinney",
-          "year": 2007,
-          "cover": "https://covers.openlibrary.org/b/id/7888937-M.jpg",
-          "relevanceScore": 3,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL27455W",
-          "title": "The Return of the King",
-          "author": "J.R.R. Tolkien",
-          "year": 1950,
-          "cover": "https://covers.openlibrary.org/b/id/14627062-M.jpg",
-          "relevanceScore": 3,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL8479867W",
-          "title": "The Name of the Wind",
-          "author": "Patrick Rothfuss",
-          "year": 2007,
-          "cover": "https://covers.openlibrary.org/b/id/11480483-M.jpg",
-          "relevanceScore": 3,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL10263W",
-          "title": "Le petit prince",
-          "author": "Antoine de Saint-Exupéry",
-          "year": 1943,
-          "cover": "https://covers.openlibrary.org/b/id/10708272-M.jpg",
-          "relevanceScore": 3,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL16810944W",
-          "title": "The School for Good and Evil",
-          "author": "Soman Chainani",
-          "year": 2007,
-          "cover": "https://covers.openlibrary.org/b/id/7879561-M.jpg",
-          "relevanceScore": 3,
-          "matchedGenres": [
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL82560W",
-          "title": "Harry Potter and the Goblet of Fire",
-          "author": "J. K. Rowling",
-          "year": 2000,
-          "cover": "https://covers.openlibrary.org/b/id/12059372-M.jpg",
-          "relevanceScore": 3,
-          "matchedGenres": [
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL82548W",
-          "title": "Harry Potter and the Order of the Phoenix",
-          "author": "J. K. Rowling",
-          "year": 2003,
-          "cover": "https://covers.openlibrary.org/b/id/15158666-M.jpg",
-          "relevanceScore": 3,
-          "matchedGenres": [
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL2056818W",
-          "title": "Maus I",
-          "author": "Art Spiegelman",
-          "year": 1986,
-          "cover": "https://covers.openlibrary.org/b/id/10210168-M.jpg",
-          "relevanceScore": 2,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL17812914W",
-          "title": "Diary of a Wimpy Kid",
-          "author": "Jeff Kinney",
-          "year": 2017,
-          "cover": "https://covers.openlibrary.org/b/id/10332154-M.jpg",
-          "relevanceScore": 2,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL16361049W",
-          "title": "Keeper of the Lost Cities",
-          "author": "Shannon Messenger",
-          "year": 2012,
-          "cover": "https://covers.openlibrary.org/b/id/9320507-M.jpg",
-          "relevanceScore": 2,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL17798838W",
-          "title": "Dog Man",
-          "author": "Dav Pilkey",
-          "year": 1999,
-          "cover": "https://covers.openlibrary.org/b/id/14415649-M.jpg",
-          "relevanceScore": 2,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL16224122W",
-          "title": "Cabin Fever",
-          "author": "Jeff Kinney",
-          "year": 2007,
-          "cover": "https://covers.openlibrary.org/b/id/7247522-M.jpg",
-          "relevanceScore": 2,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
-          ]
-        },
-        {
-          "id": "/works/OL17091839W",
-          "title": "The Martian",
-          "author": "Andy Weir",
-          "year": 2011,
-          "cover": "https://covers.openlibrary.org/b/id/11447888-M.jpg",
-          "relevanceScore": 2,
-          "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
           ]
         },
         {
@@ -1056,62 +785,365 @@
           "author": "Rick Riordan",
           "year": 2010,
           "cover": "https://covers.openlibrary.org/b/id/12848687-M.jpg",
-          "relevanceScore": 2,
+          "relevanceScore": 5,
           "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
           ]
         },
         {
-          "id": "/works/OL492647W",
-          "title": "The Titan's Curse",
+          "id": "/works/OL16664287W",
+          "title": "The Mark of Athena",
           "author": "Rick Riordan",
-          "year": 2007,
-          "cover": "https://covers.openlibrary.org/b/id/14601475-M.jpg",
-          "relevanceScore": 2,
+          "year": 2011,
+          "cover": "https://covers.openlibrary.org/b/id/12848680-M.jpg",
+          "relevanceScore": 5,
           "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
           ]
         },
         {
-          "id": "/works/OL14981609W",
-          "title": "Harry Potter (series) 1-7",
-          "author": "J. K. Rowling",
-          "year": 1999,
-          "cover": "https://covers.openlibrary.org/b/id/8457523-M.jpg",
+          "id": "/works/OL492642W",
+          "title": "The Last Olympian",
+          "author": "Rick Riordan",
+          "year": 2009,
+          "cover": "https://covers.openlibrary.org/b/id/6624107-M.jpg",
+          "relevanceScore": 4,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL17364743W",
+          "title": "The Hidden Oracle",
+          "author": "Rick Riordan",
+          "year": 2016,
+          "cover": "https://covers.openlibrary.org/b/id/7442820-M.jpg",
+          "relevanceScore": 4,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL17059943W",
+          "title": "The Blood of Olympus",
+          "author": "Rick Riordan",
+          "year": 2014,
+          "cover": "https://covers.openlibrary.org/b/id/7303498-M.jpg",
+          "relevanceScore": 4,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL492658W",
+          "title": "The Lightning Thief",
+          "author": "Rick Riordan",
+          "year": 2005,
+          "cover": "https://covers.openlibrary.org/b/id/7239831-M.jpg",
+          "relevanceScore": 4,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL492640W",
+          "title": "The Battle of the Labyrinth",
+          "author": "Rick Riordan",
+          "year": 2008,
+          "cover": "https://covers.openlibrary.org/b/id/6274739-M.jpg",
+          "relevanceScore": 4,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL16807730W",
+          "title": "House of Hades",
+          "author": "Rick Riordan",
+          "year": 2013,
+          "cover": "https://covers.openlibrary.org/b/id/8057334-M.jpg",
+          "relevanceScore": 4,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL14955039W",
+          "title": "The Demigod Files",
+          "author": "Rick Riordan",
+          "year": 2009,
+          "cover": "https://covers.openlibrary.org/b/id/14420680-M.jpg",
+          "relevanceScore": 4,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL17710050W",
+          "title": "The Dark Prophecy",
+          "author": "Rick Riordan",
+          "year": 2017,
+          "cover": "https://covers.openlibrary.org/b/id/11807743-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL61981W",
+          "title": "Ἰλιάς",
+          "author": "Όμηρος",
+          "year": 1505,
+          "cover": "https://covers.openlibrary.org/b/id/7083790-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL20140593W",
+          "title": "The Tyrant's Tomb",
+          "author": "Rick Riordan",
+          "year": 2019,
+          "cover": "https://covers.openlibrary.org/b/id/8788784-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL16282935W",
+          "title": "The Demigod Diaries",
+          "author": "Rick Riordan",
+          "year": 2012,
+          "cover": "https://covers.openlibrary.org/b/id/7241705-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL1963294W",
+          "title": "Olympos",
+          "author": "Dan Simmons",
+          "year": 2005,
+          "cover": "https://covers.openlibrary.org/b/id/5721786-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL20218895W",
+          "title": "Camp Half-Blood Confidential",
+          "author": "Rick Riordan",
+          "year": 2017,
+          "cover": "https://covers.openlibrary.org/b/id/8870920-M.jpg",
+          "relevanceScore": 3,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL18012166W",
+          "title": "Circe",
+          "author": "Madeline Miller",
+          "year": 2018,
+          "cover": "https://covers.openlibrary.org/b/id/8739376-M.jpg",
           "relevanceScore": 2,
           "matchedGenres": [
-            "children's books",
-            "dementors",
-            "good and evil",
-            "Juvenile literature",
-            "Juvenile works",
-            "Death",
-            "Fiction",
-            "series:Harry_Potter",
-            "Ghosts"
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL17916664W",
+          "title": "Mythos",
+          "author": "Stephen Fry",
+          "year": 2017,
+          "cover": "https://covers.openlibrary.org/b/id/8238803-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
+          ]
+        },
+        {
+          "id": "/works/OL17732W",
+          "title": "Bible",
+          "author": "Bible",
+          "year": 1200,
+          "cover": "https://covers.openlibrary.org/b/id/12707846-M.jpg",
+          "relevanceScore": 2,
+          "matchedGenres": [
+            "Greek Gods",
+            "Young adult fiction",
+            "Percy Jackson (Fictitious character)",
+            "Anthologies",
+            "Percy Jackson (Fictional character)",
+            "Classics",
+            "Legends, Myths, Fables",
+            "Greek & Roman",
+            "Greek Mythology",
+            "Juvenile fiction"
           ]
         }
       ],
-      "createdAt": "2026-03-19T12:51:47.786Z"
+      "createdAt": "2026-03-21T07:54:55.111Z"
     }
   },
   "counters": {
-    "publicList": 1
+    "publicList": 3
   }
 }

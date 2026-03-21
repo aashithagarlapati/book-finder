@@ -94,9 +94,22 @@ export const auth = {
   },
 };
 
+export const admin = {
+  listAccounts: (adminKey) => client.get('/auth/admin/accounts', {
+    headers: {
+      'x-admin-key': adminKey,
+    },
+  }),
+  deleteAccount: (uid, adminKey) => client.delete(`/auth/admin/accounts/${encodeURIComponent(uid)}`, {
+    headers: {
+      'x-admin-key': adminKey,
+    },
+  }),
+};
+
 export const books = {
   search: (query, limit = 20) => client.get('/books/search', { params: { query, limit } }),
-  getById: (bookId) => client.get(`/books/${bookId}`),
+  getById: (bookId) => client.get(`/books/${encodeURIComponent(bookId)}`),
   getSummary: (book) => client.get('/books/summary', {
     params: {
       bookId: book.id,
@@ -114,8 +127,8 @@ export const recommendations = {
 export const lists = {
   add: (book) => client.post('/lists/add', { book }),
   getMyList: () => client.get('/lists'),
-  remove: (bookId) => client.delete(`/lists/${bookId}`),
-  updateStatus: (bookId, status) => client.patch(`/lists/${bookId}`, { status }),
+  remove: (bookId) => client.delete(`/lists/${encodeURIComponent(bookId)}`),
+  updateStatus: (bookId, status) => client.patch('/lists/status', { bookId, status }),
 };
 
 export const publicLists = {

@@ -46,6 +46,13 @@ const sanitizeUser = (user) => ({
   displayName: user.displayName,
 });
 
+const ADMIN_PANEL_KEY = process.env.ADMIN_PANEL_KEY || 'bookfinder-admin-dev';
+
+const isAdminRequest = (req) => {
+  const incomingKey = req.headers['x-admin-key'];
+  return typeof incomingKey === 'string' && incomingKey.length > 0 && incomingKey === ADMIN_PANEL_KEY;
+};
+
 const findUserByEmail = (email) => {
   const store = readStore();
   return store.users.find((user) => user.email === normalizeEmail(email)) || null;
@@ -296,6 +303,75 @@ router.post('/verify', async (req, res) => {
     console.error('Verification error:', error);
     return res.status(401).json({ valid: false, error: 'Token verification failed' });
   }
+});
+
+// Admin: List signed up accounts
+router.get('/admin/accounts', (req, res) => {
+  if (!isAdminRequest(req)) {
+    return res.status(403).json({ error: 'Admin access denied' });
+  }
+
+  const store = readStore();
+  const users = (store.users || []).map((user) => ({
+    uid: user.uid,
+    displayName: user.displayName,
+    email: user.email,
+    createdAt: user.createdAt || null,
+  }));
+
+  return res.json({
+    count: users.length,
+    users,
+  });
+});
+
+// Admin: Delete account and associated app data
+router.delete('/admin/accounts/:uid', (req, res) => {
+  if (!isAdminRequest(req)) {
+    return res.status(403).json({ error: 'Admin access denied' });
+  }
+
+  const { uid } = req.params;
+  if (!uid) {
+    return res.status(400).json({ error: 'User ID is required' });
+  }
+
+  const deleted = updateStore((store) => {
+    const index = (store.users || []).findIndex((user) => user.uid === uid);
+    if (index === -1) {
+      return null;
+    }
+
+    const [user] = store.users.splice(index, 1);
+    if (store.readingLists && store.readingLists[uid]) {
+      delete store.readingLists[uid];
+    }
+    if (store.recommendations && store.recommendations[uid]) {
+      delete store.recommendations[uid];
+    }
+    if (store.publicLists) {
+      Object.keys(store.publicLists).forEach((listId) => {
+        if (store.publicLists[listId]?.userId === uid) {
+          delete store.publicLists[listId];
+        }
+      });
+    }
+
+    return {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+    };
+  });
+
+  if (!deleted) {
+    return res.status(404).json({ error: 'User not found' });
+  }
+
+  return res.json({
+    message: 'Account deleted successfully',
+    user: deleted,
+  });
 });
 
 module.exports = router;

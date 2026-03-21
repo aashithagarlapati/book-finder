@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import RecommendationPage from './pages/RecommendationPage';
 import ReadingListPage from './pages/ReadingListPage';
 import PublicListsPage from './pages/PublicListsPage';
+import AccountsAdminPage from './pages/AccountsAdminPage';
 import './App.css';
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
             {!user ? (
               <>
                 <Route path="/auth" element={<AuthPage onLogin={handleLogin} />} />
+                <Route path="/admin/accounts" element={<AccountsAdminPage />} />
                 <Route path="*" element={<Navigate to="/auth" replace />} />
               </>
             ) : (
@@ -83,6 +85,7 @@ function App() {
                 <Route path="/recommendations" element={<RecommendationPage user={user} />} />
                 <Route path="/my-list" element={<ReadingListPage user={user} />} />
                 <Route path="/public-lists" element={<PublicListsPage user={user} />} />
+                <Route path="/admin/accounts" element={<AccountsAdminPage />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </>
             )}

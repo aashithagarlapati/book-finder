@@ -119,44 +119,117 @@ router.delete('/:bookId', async (req, res) => {
   }
 });
 
+const normalizeStatus = (status) => (status === 'finished' ? 'read' : status);
+
+const parseBookId = (rawBookId) => {
+  if (typeof rawBookId !== 'string') {
+    return rawBookId;
+  }
+
+  // Be tolerant of encoded IDs coming from clients/proxies.
+  try {
+    return decodeURIComponent(rawBookId);
+  } catch {
+    return rawBookId;
+  }
+};
+
+const updateBookStatus = (userId, rawBookId, status) => {
+  const normalizedStatus = normalizeStatus(status);
+  const targetBookId = parseBookId(rawBookId);
+
+  const validStatuses = ['want-to-read', 'reading', 'read'];
+  if (!validStatuses.includes(normalizedStatus)) {
+    return {
+      error: {
+        status: 400,
+        body: {
+          error: `Invalid status. Must be one of: ${validStatuses.join(', ')} (or finished)`,
+        },
+      },
+    };
+  }
+
+  if (!targetBookId) {
+    return {
+      error: {
+        status: 400,
+        body: {
+          error: 'Book ID is required',
+        },
+      },
+    };
+  }
+
+  const book = updateStore((store) => {
+    const userList = store.readingLists[userId] || [];
+    const existingBook = userList.find((entry) => entry.id === targetBookId || entry.id === rawBookId);
+
+    if (!existingBook) {
+      return null;
+    }
+
+    existingBook.status = normalizedStatus;
+    existingBook.updatedAt = new Date().toISOString();
+    return existingBook;
+  });
+
+  if (!book) {
+    return {
+      error: {
+        status: 404,
+        body: {
+          error: 'Book not found in reading list',
+        },
+      },
+    };
+  }
+
+  return { book };
+};
+
+// Update book status via body payload (preferred; avoids path encoding issues)
+router.patch('/status', async (req, res) => {
+  const { bookId, status } = req.body;
+  const userId = req.user.uid;
+
+  try {
+    ensureUserList(userId);
+
+    const result = updateBookStatus(userId, bookId, status);
+    if (result.error) {
+      return res.status(result.error.status).json(result.error.body);
+    }
+
+    return res.json({
+      message: 'Book status updated',
+      book: result.book,
+    });
+  } catch (error) {
+    console.error('Update status error:', error);
+    return res.status(500).json({
+      error: 'Failed to update book status',
+    });
+  }
+});
+
 // Update book status (want-to-read, reading, read)
 router.patch('/:bookId', async (req, res) => {
   const { bookId } = req.params;
   const { status } = req.body;
   const userId = req.user.uid;
 
-  const normalizedStatus = status === 'finished' ? 'read' : status;
-
-  const validStatuses = ['want-to-read', 'reading', 'read'];
-  if (!validStatuses.includes(normalizedStatus)) {
-    return res.status(400).json({
-      error: `Invalid status. Must be one of: ${validStatuses.join(', ')} (or finished)`,
-    });
-  }
-
   try {
     ensureUserList(userId);
 
-    const book = updateStore((store) => {
-      const userList = store.readingLists[userId] || [];
-      const existingBook = userList.find((entry) => entry.id === bookId);
-
-      if (!existingBook) {
-        return null;
-      }
-
-      existingBook.status = normalizedStatus;
-      existingBook.updatedAt = new Date().toISOString();
-      return existingBook;
-    });
-
-    if (!book) {
-      return res.status(404).json({ error: 'Book not found in reading list' });
+    const result = updateBookStatus(userId, bookId, status);
+    if (result.error) {
+      return res.status(result.error.status).json(result.error.body);
     }
 
     res.json({
       message: 'Book status updated',
-      book,
+      book: result.book,
     });
   } catch (error) {
     console.error('Update status error:', error);
