@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { social } from '../api/client';
+import { buildBookPagePath } from '../utils/bookLinks';
 import './UserProfilePage.css';
 
 const describeActivity = (activity) => {
@@ -94,7 +95,6 @@ function UserProfilePage() {
               <div>
                 <Link className="profile-back" to="/social">← Back to discovery</Link>
                 <h1>{profile.user.displayName}</h1>
-                <p>{profile.user.email}</p>
                 <div className="profile-stats">
                   <button
                     className={`profile-stat-badge${tab === 'followers' ? ' is-active' : ''}`}
@@ -135,7 +135,6 @@ function UserProfilePage() {
                       <article key={u.uid} className="card-subtle profile-user-card">
                         <div>
                           <Link className="social-user-link" to={`/social/users/${u.uid}`}>{u.displayName}</Link>
-                          <p>{u.email}</p>
                         </div>
                         <button
                           className={`btn ${u.isFollowing ? 'btn-ghost' : 'btn-primary'} btn-sm`}
@@ -163,7 +162,9 @@ function UserProfilePage() {
                   ) : (
                     profile.publicLists.map((list) => (
                       <article key={list.id} className="card-subtle profile-list-card">
-                        <strong>{list.listName}</strong>
+                        <Link className="profile-list-link" to={`/public-lists#public-list-${list.id}`}>
+                          <strong>{list.listName}</strong>
+                        </Link>
                         <p>{list.description || 'No description provided.'}</p>
                         <span>{list.books?.length || 0} books</span>
                       </article>
@@ -187,6 +188,20 @@ function UserProfilePage() {
                           <strong>{new Date(activity.createdAt).toLocaleString()}</strong>
                         </div>
                         <p className="feed-summary">{describeActivity(activity)}</p>
+                        {activity.book?.id && (
+                          <p>
+                            <Link className="feed-book-link" to={buildBookPagePath(activity.book)}>
+                              {activity.book.title || 'Open book'}
+                            </Link>
+                          </p>
+                        )}
+                        {activity.list?.id && (
+                          <p>
+                            <Link className="feed-book-link" to={`/public-lists#public-list-${activity.list.id}`}>
+                              {activity.list.listName || 'Open public list'}
+                            </Link>
+                          </p>
+                        )}
                         {activity.reviewText && <p className="feed-review">“{activity.reviewText}”</p>}
                       </article>
                     ))

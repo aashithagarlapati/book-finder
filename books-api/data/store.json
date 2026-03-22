@@ -27,7 +27,8 @@
         "cover": null,
         "relevanceScore": 1,
         "addedAt": "2026-03-19T10:06:10.437Z",
-        "status": "want-to-read"
+        "status": "reading",
+        "updatedAt": "2026-03-21T16:57:35.320Z"
       },
       {
         "id": "/works/OL42541314W",
@@ -435,7 +436,8 @@
         "cover": null,
         "relevanceScore": 1,
         "addedAt": "2026-03-21T15:51:13.873Z",
-        "status": "want-to-read"
+        "status": "reading",
+        "updatedAt": "2026-03-21T17:25:28.650Z"
       },
       {
         "id": "/works/OL42541314W",
@@ -469,6 +471,52 @@
         "addedAt": "2026-03-21T15:51:13.878Z",
         "status": "want-to-read",
         "updatedAt": "2026-03-21T07:55:06.072Z"
+      },
+      {
+        "id": "/works/OL492646W",
+        "title": "The Sea of Monsters",
+        "author": "Rick Riordan",
+        "year": 2006,
+        "cover": "https://covers.openlibrary.org/b/id/108909-M.jpg",
+        "relevanceScore": 5,
+        "matchedGenres": [
+          "Greek Gods",
+          "Young adult fiction",
+          "Percy Jackson (Fictitious character)",
+          "Anthologies",
+          "Percy Jackson (Fictional character)",
+          "Classics",
+          "Legends, Myths, Fables",
+          "Greek & Roman",
+          "Greek Mythology",
+          "Juvenile fiction"
+        ],
+        "addedAt": "2026-03-21T17:02:45.384Z",
+        "status": "want-to-read",
+        "updatedAt": "2026-03-21T07:55:17.638Z"
+      },
+      {
+        "id": "/works/OL15401200W",
+        "title": "The Lost Hero",
+        "author": "Rick Riordan",
+        "year": 2010,
+        "cover": "https://covers.openlibrary.org/b/id/12848687-M.jpg",
+        "relevanceScore": 5,
+        "matchedGenres": [
+          "Greek Gods",
+          "Young adult fiction",
+          "Percy Jackson (Fictitious character)",
+          "Anthologies",
+          "Percy Jackson (Fictional character)",
+          "Classics",
+          "Legends, Myths, Fables",
+          "Greek & Roman",
+          "Greek Mythology",
+          "Juvenile fiction"
+        ],
+        "addedAt": "2026-03-21T17:02:45.387Z",
+        "status": "want-to-read",
+        "updatedAt": "2026-03-21T07:55:19.710Z"
       }
     ]
   },
@@ -1508,6 +1556,19 @@
         "likes": [],
         "createdAt": "2026-03-21T15:49:45.125Z"
       }
+    ],
+    "/works/OL82560W": [
+      {
+        "id": "review-4",
+        "bookId": "/works/OL82560W",
+        "userId": "user-1774106230941",
+        "displayName": "Aashitha",
+        "content": "Great book!",
+        "likes": [
+          "user-1773914220290"
+        ],
+        "createdAt": "2026-03-21T16:58:42.475Z"
+      }
     ]
   },
   "follows": {
@@ -1519,6 +1580,105 @@
     ]
   },
   "activities": [
+    {
+      "id": "activity-25",
+      "createdAt": "2026-03-21T17:25:28.650Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reading-status-updated",
+      "status": "reading",
+      "book": {
+        "id": "/works/OL42541309W",
+        "title": "Hermione Granger",
+        "author": "J. K. Rowling",
+        "cover": null
+      }
+    },
+    {
+      "id": "activity-24",
+      "createdAt": "2026-03-21T17:25:26.554Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reading-status-updated",
+      "status": "want-to-read",
+      "book": {
+        "id": "/works/OL42541309W",
+        "title": "Hermione Granger",
+        "author": "J. K. Rowling",
+        "cover": null
+      }
+    },
+    {
+      "id": "activity-23",
+      "createdAt": "2026-03-21T17:25:23.558Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reading-status-updated",
+      "status": "read",
+      "book": {
+        "id": "/works/OL42541309W",
+        "title": "Hermione Granger",
+        "author": "J. K. Rowling",
+        "cover": null
+      }
+    },
+    {
+      "id": "activity-22",
+      "createdAt": "2026-03-21T17:02:45.387Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reading-list-added",
+      "status": "want-to-read",
+      "book": {
+        "id": "/works/OL15401200W",
+        "title": "The Lost Hero",
+        "author": "Rick Riordan",
+        "cover": "https://covers.openlibrary.org/b/id/12848687-M.jpg"
+      }
+    },
+    {
+      "id": "activity-21",
+      "createdAt": "2026-03-21T17:02:45.384Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reading-list-added",
+      "status": "want-to-read",
+      "book": {
+        "id": "/works/OL492646W",
+        "title": "The Sea of Monsters",
+        "author": "Rick Riordan",
+        "cover": "https://covers.openlibrary.org/b/id/108909-M.jpg"
+      }
+    },
+    {
+      "id": "activity-20",
+      "createdAt": "2026-03-21T16:58:42.475Z",
+      "userId": "user-1774106230941",
+      "displayName": "Aashitha",
+      "type": "reviewed-book",
+      "reviewId": "review-4",
+      "reviewText": "Great book!",
+      "book": {
+        "id": "/works/OL82560W",
+        "title": "Harry Potter and the Goblet of Fire",
+        "author": "J. K. Rowling",
+        "cover": "https://covers.openlibrary.org/b/id/12059372-M.jpg"
+      }
+    },
+    {
+      "id": "activity-19",
+      "createdAt": "2026-03-21T16:57:35.320Z",
+      "userId": "user-1773914220290",
+      "displayName": "Praveen",
+      "type": "reading-status-updated",
+      "status": "reading",
+      "book": {
+        "id": "/works/OL42541309W",
+        "title": "Hermione Granger",
+        "author": "J. K. Rowling",
+        "cover": null
+      }
+    },
     {
       "id": "activity-18",
       "createdAt": "2026-03-21T15:51:13.878Z",
@@ -1718,6 +1878,31 @@
   "notifications": {
     "user-1774106230941": [
       {
+        "id": "notif-6",
+        "type": "review-liked",
+        "message": "Praveen liked your review of a book",
+        "actorId": "user-1773914220290",
+        "actorName": "Praveen",
+        "ref": {
+          "reviewId": "review-4",
+          "bookId": "/works/OL82560W"
+        },
+        "read": true,
+        "createdAt": "2026-03-21T16:59:22.646Z"
+      },
+      {
+        "id": "notif-4",
+        "type": "new-follower",
+        "message": "Praveen started following you",
+        "actorId": "user-1773914220290",
+        "actorName": "Praveen",
+        "ref": {
+          "userId": "user-1773914220290"
+        },
+        "read": true,
+        "createdAt": "2026-03-21T16:57:02.299Z"
+      },
+      {
         "id": "notif-1",
         "type": "new-follower",
         "message": "Praveen started following you",
@@ -1731,6 +1916,30 @@
       }
     ],
     "user-1773914220290": [
+      {
+        "id": "notif-7",
+        "type": "new-follower",
+        "message": "Aashitha started following you",
+        "actorId": "user-1774106230941",
+        "actorName": "Aashitha",
+        "ref": {
+          "userId": "user-1774106230941"
+        },
+        "read": true,
+        "createdAt": "2026-03-21T17:04:22.668Z"
+      },
+      {
+        "id": "notif-5",
+        "type": "new-follower",
+        "message": "Aashitha started following you",
+        "actorId": "user-1774106230941",
+        "actorName": "Aashitha",
+        "ref": {
+          "userId": "user-1774106230941"
+        },
+        "read": true,
+        "createdAt": "2026-03-21T16:57:10.369Z"
+      },
       {
         "id": "notif-2",
         "type": "new-follower",
@@ -1747,8 +1956,8 @@
   },
   "counters": {
     "publicList": 5,
-    "review": 4,
-    "activity": 19,
-    "notification": 4
+    "review": 5,
+    "activity": 26,
+    "notification": 8
   }
 }

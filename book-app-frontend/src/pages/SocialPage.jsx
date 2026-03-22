@@ -1,24 +1,72 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { social } from '../api/client';
 import { buildBookPagePath } from '../utils/bookLinks';
 import './SocialPage.css';
 
-const describeActivity = (activity) => {
+const statusLabel = (status) => {
+  if (status === 'want-to-read') return 'Want to read';
+  if (status === 'reading') return 'Reading';
+  if (status === 'finished' || status === 'read') return 'Finished';
+  return status || 'a new status';
+};
+
+const renderActivitySummary = (activity) => {
+  const bookTitle = activity.book?.title || 'a book';
+  const listTitle = activity.list?.listName || 'Reading List';
+
   if (activity.type === 'reading-list-added') {
-    return `added ${activity.book?.title || 'a book'} to their list (${activity.status || 'want-to-read'})`;
+    return (
+      <Fragment>
+        added{' '}
+        {activity.book ? (
+          <Link className="feed-inline-link" to={buildBookPagePath(activity.book)}>{bookTitle}</Link>
+        ) : (
+          bookTitle
+        )}{' '}
+        to their list ({statusLabel(activity.status)})
+      </Fragment>
+    );
   }
 
   if (activity.type === 'reading-status-updated') {
-    return `updated ${activity.book?.title || 'a book'} to ${activity.status || 'a new status'}`;
+    return (
+      <Fragment>
+        updated{' '}
+        {activity.book ? (
+          <Link className="feed-inline-link" to={buildBookPagePath(activity.book)}>{bookTitle}</Link>
+        ) : (
+          bookTitle
+        )}{' '}
+        to {statusLabel(activity.status)}
+      </Fragment>
+    );
   }
 
   if (activity.type === 'reviewed-book') {
-    return `reviewed ${activity.book?.title || 'a book'}`;
+    return (
+      <Fragment>
+        reviewed{' '}
+        {activity.book ? (
+          <Link className="feed-inline-link" to={buildBookPagePath(activity.book)}>{bookTitle}</Link>
+        ) : (
+          bookTitle
+        )}
+      </Fragment>
+    );
   }
 
   if (activity.type === 'shared-public-list') {
-    return `shared a public list: ${activity.list?.listName || 'Reading List'}`;
+    return (
+      <Fragment>
+        shared a public list:{' '}
+        {activity.list ? (
+          <Link className="feed-inline-link" to={`/public-lists#public-list-${activity.list.id}`}>{listTitle}</Link>
+        ) : (
+          listTitle
+        )}
+      </Fragment>
+    );
   }
 
   return 'shared an update';
@@ -97,7 +145,7 @@ function SocialPage() {
 
               <input
                 type="text"
-                placeholder="Search readers by name or email..."
+                placeholder="Search readers by name..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
@@ -112,7 +160,6 @@ function SocialPage() {
                         <Link className="social-user-link" to={`/social/users/${user.uid}`}>
                           {user.displayName}
                         </Link>
-                        <p>{user.email}</p>
                         <div className="social-user-stats">
                           <span>{user.followerCount} followers</span>
                           <span>{user.followingCount} following</span>
@@ -144,10 +191,14 @@ function SocialPage() {
                   activities.map((activity) => (
                     <article key={activity.id} className="feed-card card-subtle">
                       <div className="feed-head">
-                        <strong>{activity.displayName || 'Reader'}</strong>
+                        <strong>
+                          <Link className="social-user-link" to={`/social/users/${activity.userId}`}>
+                            {activity.displayName || 'Reader'}
+                          </Link>
+                        </strong>
                         <span>{new Date(activity.createdAt).toLocaleString()}</span>
                       </div>
-                      <p className="feed-summary">{describeActivity(activity)}</p>
+                      <p className="feed-summary">{renderActivitySummary(activity)}</p>
                       {activity.book && (
                         <div className="feed-book-row">
                           <Link className="feed-book-link" to={buildBookPagePath(activity.book)}>
@@ -158,7 +209,9 @@ function SocialPage() {
                       )}
                       {activity.list && (
                         <div className="feed-book-row">
-                          <span className="badge-blue">{activity.list.listName}</span>
+                          <Link className="feed-book-link" to={`/public-lists#public-list-${activity.list.id}`}>
+                            <span className="badge-blue">{activity.list.listName}</span>
+                          </Link>
                           <span>{activity.list.count} books</span>
                         </div>
                       )}

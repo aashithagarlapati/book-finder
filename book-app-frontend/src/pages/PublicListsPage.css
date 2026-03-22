@@ -58,6 +58,11 @@
   box-shadow: var(--shadow-md);
 }
 
+.list-card--highlight {
+  border-color: var(--card-light);
+  box-shadow: 0 0 0 2px rgba(120, 156, 206, 0.4);
+}
+
 .list-card-header {
   display: flex;
   align-items: flex-start;

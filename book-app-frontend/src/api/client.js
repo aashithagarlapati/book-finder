@@ -17,6 +17,42 @@ const client = axios.create({
   },
 });
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const isTransientNetworkError = (error) => {
+  if (!error) return false;
+  if (error.response) return false;
+
+  const code = String(error.code || '');
+  const message = String(error.message || '').toLowerCase();
+
+  return code === 'ERR_NETWORK'
+    || message.includes('connection refused')
+    || message.includes('network error');
+};
+
+const getWithRetry = async (url, config = {}, retries = 2) => {
+  let attempt = 0;
+  let lastError = null;
+
+  while (attempt <= retries) {
+    try {
+      return await client.get(url, config);
+    } catch (error) {
+      lastError = error;
+      if (!isTransientNetworkError(error) || attempt === retries) {
+        throw error;
+      }
+
+      // Short backoff to ride out brief local API restarts.
+      await sleep(180 * (attempt + 1));
+      attempt += 1;
+    }
+  }
+
+  throw lastError;
+};
+
 // Add token to requests if it exists
 client.interceptors.request.use((config) => {
   const token = localStorage.getItem('authToken');
@@ -110,14 +146,14 @@ export const admin = {
 export const books = {
   search: (query, limit = 20) => client.get('/books/search', { params: { query, limit } }),
   getById: (bookId) => client.get(`/books/${encodeURIComponent(bookId)}`),
-  getDetails: (book) => client.get('/books/details', {
+  getDetails: (book) => getWithRetry('/books/details', {
     params: {
       bookId: book.id,
       title: book.title,
       author: book.author,
     },
   }),
-  getSummary: (book) => client.get('/books/summary', {
+  getSummary: (book) => getWithRetry('/books/summary', {
     params: {
       bookId: book.id,
       title: book.title,

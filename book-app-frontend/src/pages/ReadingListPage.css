@@ -137,27 +137,24 @@
   flex-shrink: 0;
 }
 
-.status-badge {
-  padding: 3px 10px;
+.status-select {
+  padding: 5px 10px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
   border-radius: var(--r-full);
   font-size: var(--text-xs);
   font-weight: 500;
-  border: 1px solid;
-}
-.status-badge.want { color: var(--text-muted); border-color: var(--border); }
-.status-badge.reading { color: var(--card-light); border-color: var(--card); }
-.status-badge.read { color: #4caf50; border-color: #4caf50; }
-
-.status-select {
-  padding: 4px 8px;
-  background: var(--bg-raised);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  color: var(--text-muted);
-  font-size: var(--text-xs);
   cursor: pointer;
+  white-space: nowrap;
+  transition: border-color var(--ease), color var(--ease);
 }
-.status-select:focus { outline: none; border-color: var(--card); }
+.status-select:focus { outline: none; }
+.status-select--want  { color: var(--text-muted); border-color: var(--border); }
+.status-select--reading { color: var(--card-light); border-color: var(--card); }
+.status-select--read  { color: #4caf50; border-color: #4caf50; }
+.status-select--want:focus  { border-color: var(--border-hover); }
+.status-select--reading:focus { border-color: var(--card); }
+.status-select--read:focus  { border-color: #4caf50; }
 
 .remove-btn {
   background: none;

@@ -84,6 +84,17 @@
   margin-bottom: var(--sp-3);
 }
 
+.feed-inline-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+
+.feed-inline-link:hover {
+  color: var(--card-light);
+}
+
 .feed-book-row {
   display: flex;
   align-items: center;

@@ -145,11 +145,8 @@ function ReadingListPage({ user }) {
                   </div>
                 </Link>
                 <div className="list-item-actions">
-                  <span className={`status-badge ${STATUS_CLASS[book.status] || 'want'}`}>
-                    {STATUS_LABELS[book.status] || book.status}
-                  </span>
                   <select
-                    className="status-select"
+                    className={`status-select status-select--${STATUS_CLASS[normalizeStatus(book.status)] || 'want'}`}
                     value={normalizeStatus(book.status)}
                     onChange={(e) => handleStatus(book.id, e.target.value)}
                   >

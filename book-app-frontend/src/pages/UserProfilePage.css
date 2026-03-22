@@ -106,6 +106,15 @@
   color: var(--text-faint);
 }
 
+.profile-list-link {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.profile-list-link:hover strong {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .profile-hero,
   .profile-layout {

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { books, lists, reviews } from '../api/client';
 import './BookExplorerPage.css';
@@ -28,6 +28,8 @@ function BookExplorerPage({ user }) {
   const [editingReviewText, setEditingReviewText] = useState('');
   const [error, setError] = useState('');
   const [info, setInfo] = useState('');
+  const latestSelectRequestRef = useRef(0);
+  const handledDeepLinkKeyRef = useRef('');
 
   const shelfById = useMemo(() => {
     const map = new Map();
@@ -84,6 +86,7 @@ function BookExplorerPage({ user }) {
   };
 
   const handleSelectBook = async (book) => {
+    const requestId = ++latestSelectRequestRef.current;
     setSelectedBook(book);
     setDetailBook(null);
     setDetailLoading(true);
@@ -96,11 +99,23 @@ function BookExplorerPage({ user }) {
 
     try {
       const response = await books.getDetails(book);
+      if (requestId !== latestSelectRequestRef.current) {
+        return;
+      }
       setDetailBook(response.data);
       await loadReviews(book.id);
     } catch {
-      setDetailError('Could not load book details.');
+      if (requestId !== latestSelectRequestRef.current) {
+        return;
+      }
+      // Graceful fallback for transient local API outages.
+      setDetailBook((prev) => prev || book);
+      setDetailError('');
+      await loadReviews(book.id);
     } finally {
+      if (requestId !== latestSelectRequestRef.current) {
+        return;
+      }
       setDetailLoading(false);
     }
   };
@@ -113,13 +128,20 @@ function BookExplorerPage({ user }) {
     const year = searchParams.get('year');
 
     if (!bookId) {
+      handledDeepLinkKeyRef.current = '';
       if (title && !query.trim()) {
         setQuery(title);
       }
       return;
     }
 
-    if (selectedBook?.id === bookId) {
+    const deepLinkKey = `${bookId}|${title || ''}|${author || ''}`;
+    if (handledDeepLinkKeyRef.current === deepLinkKey) {
+      return;
+    }
+
+    if (selectedBook?.id === bookId && detailBook) {
+      handledDeepLinkKeyRef.current = deepLinkKey;
       return;
     }
 
@@ -135,8 +157,9 @@ function BookExplorerPage({ user }) {
       setQuery(title);
     }
 
+    handledDeepLinkKeyRef.current = deepLinkKey;
     handleSelectBook(linkedBook);
-  }, [searchParams]);
+  }, [searchParams, query, selectedBook?.id, detailBook]);
 
   const handleSaveStatus = async () => {
     if (!selectedBook) return;

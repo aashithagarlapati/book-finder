@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { publicLists, lists } from '../api/client';
 import { buildBookPagePath } from '../utils/bookLinks';
 import './PublicListsPage.css';
 
 function PublicListsPage({ user }) {
+  const location = useLocation();
   const [communityLists, setCommunityLists] = useState([]);
   const [myLists, setMyLists] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,6 +19,19 @@ function PublicListsPage({ user }) {
   const [selectedByList, setSelectedByList] = useState({});
 
   useEffect(() => { loadAll(); loadMyLists(); loadUserBooks(); }, []);
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const targetId = location.hash.replace('#', '');
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    target.classList.add('list-card--highlight');
+    const timer = setTimeout(() => target.classList.remove('list-card--highlight'), 1800);
+    return () => clearTimeout(timer);
+  }, [location.hash, communityLists, myLists, loading]);
 
   const loadAll = async () => {
     setLoading(true); setError(''); setInfo('');
@@ -244,7 +258,7 @@ function PublicListsPage({ user }) {
         ) : (
           <div className="lists-grid">
             {communityLists.map((list) => (
-              <div key={list.id} className="list-card">
+              <div id={`public-list-${list.id}`} key={list.id} className="list-card">
                 <div className="list-card-header">
                   <div className="list-card-title">{list.listName}</div>
                   <span className="list-card-count">{list.books?.length ?? 0} books</span>
@@ -312,7 +326,7 @@ function PublicListsPage({ user }) {
           ) : (
             <div className="lists-grid">
               {myLists.map((list) => (
-                <div key={list.id} className="list-card">
+                <div id={`public-list-${list.id}`} key={list.id} className="list-card">
                   <div className="list-card-header">
                     <div className="list-card-title">{list.listName}</div>
                     <span className="list-card-count">{list.books?.length ?? 0} books</span>
